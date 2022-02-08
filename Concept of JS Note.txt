@@ -1,0 +1,4427 @@
+--Array--
+
+1. Index/offset number start from 0 for array.
+2. For checking array length use variable name . length. And it start counting from 1.
+
+--Array concept 2--
+এরে হচ্ছে মুলত এমন একটা সিস্টেম যার মধ্যে আমরা অনেকগুলো ডাটাকে একসাথে রাখতে পারি। আমাদের যদি একটা ক্লাস থাকে সেখানে অনেক স্টুডেন্ট থাকে তাহলে সেটা একটা করে ভার করে ডিগলেয়ার অনেক কঠিন এক জিনিস মনে হবে দীর্ঘ বছর একটা দুঃস্পন্নের মধ্যে আছি এই সমস্যার সমাধানের জন্য মুলত এরে ।
+var mylist = "karim","sagor", "nodi", "jobbar";
+এটা কিন্তু ইরর আসবে যদি একসাথে অনেক মানকে ডিগলেয়ার করতে হয় তাহলে অবশ্যই থার্ড ব্রাকেট দিতে হবে।
+var mylist = ["karim","sagor", "nodi", "jobbar", ১২৩, ৪৫৮, true]; এভাবে দিলে ইরর আসবে না।
+এখানে আমরা একসাথে অনেকগুলো ডাটা নিতে পারি string, integer, number, boolian data etc .
+একটু চিন্তা করলে দেখা যাচ্ছে আমাদের ডাটাগুলো নামগুলো কোনটা কোন নাম্বারে আছে সেটা বোঝার জন্য আসলে কোনটা কয়নাম্বারে তার জন্য এই কোডটা লিখব
+// position index offset
+console.log(mylist[1])
+দেখা যাচ্ছে সাগর নামটা দুই নাম্বারে আছে কিন্তু আমাদের ১ তো করিম হওয়ার কথা ।
+এটার কারন হল প্রোগ্রামিং ল্যানগুয়েজ হচ্ছে ডিগলেয়ার হয় ০ থেকে । মানে এখানে হচ্ছে করিম হচ্ছে ০ সাগর হচ্ছে ১ ।
+তার এরে শুরু হচ্ছে 0 থেকে।
+Length
+এথানে এই এরে টা লেন্ত কতটা এটা বুঝতে হবে । মানে ১,২,৩,৪ এটা আসলে কতদুর গেছে ।
+এটা চেক করার জন্য
+console.log(mylist.length) েএখানে দেখাচ্ছে ৪ এখানে টোটাল কতগুলো আছে তা দেখাবে । কিন্তু অফসেট বা ইনডেক্স এর ক্ষেত্রে ০ থেকে শুরু হবে।
+আমরা যদি আরেক টা নাম যোগ করতে চাই তাহলে এটা আমরা আমাদের ইনডেক্স নাম্বার কততে পাঠাতে চাচ্ছি ৩ টা আছে তাহলে ৪ নাম্বারে পাঠাতে হবে ।
+var mylist = ["karim","sagor", "nodi", "jobbar"]
+console.log(mylist.length);
+mylist[4]="BELI";
+console.log(mylist);
+console.log(mylist.length)
+আমরা দেখুন নতুন একটা নাম পাঠাইলাম বেলি । মাইলিস্টে এখন ৫ টা নাম দেখাবে । আর নিচের আইটেমে ৫ টা লেন দেখাবে । এভাবে ইচ্ছা করে মাই লিস্টে আবার কল করে আর নাম পাঠানো যেতে পারে ।
+েএটাকে এখন আরো ইজিতে করার জন্য এখন
+mylist.push(); এটা জাভা স্কিপের একটা বিল্ডিং ফাংশন । কোন কিছুকে পাঠানোর জ্ন্য পুষ ব্যবহার করা হয়। অবশ্যই ফাস্ট ব্রাকেট ইউজ করতে হবে ।
+var mylist = ["karim","sagor", "nodi", "jobbar"]
+mylist.push("simtiya");
+mylist.push("sagor koiry");
+mylist.push("simi kundu");
+console.log(mylist); এবার আর ইজিতে তিনটি নতুন সদস্য সহজে পাঠাইলাম ।
+এখন যদি আমরা কোন একটা নামকে বাদ দিতে চাই তাহলে যেটা করতে হবে।
+my.list(pop); এখানে আর কিছু নতুন করে কিছু করতে হবে না। pop অটোমেটিকভাবে লাস্টের সদস্য বাদ দিয়ে দিবে ।
+কোন সদস্যকে প্রথমে আনতে চাইলে যেটা কোড লিখতে হবে
+var mylist = ["karim","sagor", "nodi", "jobbar"]
+mylist.pop();
+mylist.unshift("jannat");
+mylist.unshift("bishal");
+mylist.unshift("hanif");
+console.log(mylist);
+এটা সবার শেষের এক কথায় hanif থেকে প্রিন্ট করবে । এটা নিচ থেকে কাজ প্রথমে আসা কাজ করে।
+কোন একটা কিছুকে বাদ দেওয়ার জন্য যেটা করব সেটা হল :
+mylist.shift(); এটা লিখলে আমাদের এখন প্রথম থেকে করিম নামটা বাদ হয়ে যাবে ।
+এই কোডটা কোন একটা কোডের জায়গায় আরেকটা বসাইতে হলে ব্যবহার করতে হবে । ইনডেক্স নাম্বার ১ দিছি তাহলে সে আমাদের ‍সাগরের জায়গায় আমিন বসাবে তার আমরা সাগরের ইনডেক্স নাম্বাকে ডিগলেয়ার করে বলেছি নিচের কোডগুলো লক্ষ্য করুন।
+var mylist = ["karim","sagor", "nodi", "jobbar"]
+mylist[1] = "amin";
+console.log(mylist);
+অথবা var mylist = [10, 20, 30, 23];
+mylist[0]=18;
+console.log(mylist)
+দেখুন এখানে ১৮ এর জায়গায় ১০ হয়ে গেছে। এখানে ০ মান টা চেঞ্জ করলাম সেখানে ১৮ কে বসালাম তাই এখন আমাদের ১০ জায়গায় ১৮ প্রিন্ট হবে ।
+
+--Array Concept 3--
+
+Note: Shallow copy and deep copy
+
+Shallow copy - variable copy.
+deep copy - array follows deep copy.
+
+1. If we want to change the value from one array to another then we need to use slice. Example:
+
+var list1 = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June"
+];
+
+var list2=list1.slice();
+
+list2[2] = "No Day";
+
+console.log(list1, list2);
+
+2. In modern javascript ES6 for copy above array just use ... (3dots) before variable name and no need to use slice.
+
+
+--Array Concept 4--
+
+1. Index number can be start from positive and negative value in array.
+
+2. slice method copy from main array and keep the main array right in no change.
+
+3. slice copy from the above array & need to give 2 value 1 is index number, 2 is the value after the taken element. Example
+
+var list = [
+    "January",
+    "Fenruary",
+    "March",
+    "April",
+    "May",
+    "June"
+];
+
+var chunk = list.slice(1,4);
+console.log(list,chunk);
+
+4. splice cut the element from the array and replace it to the defined array and need to give 2 value 1 value is the index number and another value is for the element which I want to take.
+
+
+var list = [
+    "January",
+    "Fenruary",
+    "March",
+    "April",
+    "May",
+    "June"
+];
+var chunk = list.splice(2,4);
+console.log(list,chunk);
+
+
+--Part 13-- JavaScript Premium Concept-- String Method--
+
+1. We can take two variable str1, str2 and string value. Now we can check the position of the index number of the character by using charAt method. Example:
+
+var str1 = "First impressing is the best impression";
+var str2 = "We are learning JS from Learn Code";
+
+//charAt (Finding index number of the character by this method).
+
+console.log(str1.charAt(6));
+
+2. For finding the code for each character value use charCodeAt method. And JS follows ASCII code character value. Example:
+
+var str1 = "First impressing is the best impression";
+var str2 = "We are learning JS from Learn Code";
+
+console.log(str1.charCodeAt(2));
+
+3. For adding one string value with another string value we can use concat method.Example:
+
+let str1 = "First impressing is the best impression.";
+let str2 = " We are learning JS from Learn Code.";
+let str3 = " We are practising String Method."
+
+console.log(str1.concat(str2,str3));
+
+4. For checking the last word of the string use endswith method and find boolean value whether it is true or false. Need to give the value in the parameter.
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.endsWith("impression."));
+
+5. For finding any value or name from the string or array use includes method and find out the boolean value true or false. Example:
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.includes("best"));
+
+6. For finding character from the ASCII code value use fromCharCode method. Example:
+
+console.log(String.fromCharCode(114));
+
+7. For find out the index number/offset of the string or array use indexOff method. And also we know that JS work from left to right. So if multiple character exist and stay at the last also use lastIndexOff method. Example: 
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.indexOf("m"));
+console.log(str1.lastIndexOf("m"));
+
+8. finding the string or array value how much used in a string or array use match method. Example:
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.match(/best/g));
+
+9. If we want to use a string multiple time use repeat method.
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.repeat(3));
+
+10. If we want to replace any word in a string use replace method. Example: 
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.replace(/best/g, "good"));
+
+11. For searching any string value use search method. Example:
+
+let str1 = "First impressing is the best impression.";
+
+console.log(str1.search("best"));
+
+12. For slicing the value of the string use slice method. Example:
+
+console.log(str1.slice(2,5));
+
+13. For convert string to array use split method. Example:
+
+console.log(str1.split(" "));
+
+14. For uppercase all letter use toUpperCase method.
+
+console.log(str1.toUpperCase());
+
+15. For lowercase all letter use toLowerCase method.
+
+console.log(str2.toLowerCase());
+
+
+
+-- Part 14-- JavaScript Type Conversion--
+
+Note: data length check possible in string not possible in number.
+
+Note: If multiple function work then it will not pass value for next. Such as new date() function.
+
+1. if we want to convert number to string do as follow.
+
+let dataCon;
+
+// Number to string
+
+dataCon = 888;
+//Number to string using function
+
+dataCon = String(888);
+dataCon = String(5+5);
+dataCon = String(999);
+//using method
+dataCon = (888).toString();
+//find out date by function
+ dataCon = String(new Date());
+// Boolean to string
+dataCon = String(true);
+
+console.log(dataCon);
+console.log(typeof dataCon);
+console.log(dataCon.length);
+
+//Boolean value true convert into number (find out true and false value)
+
+let trueValue = Number(true);
+console.log(trueValue); 
+
+
+
+
+
+--JS Function-- Part -- 16
+
+1. We can define function as below-
+
+function sayHello(){
+    console.log("Hello");
+}
+
+sayHello();
+
+2. Now for using function parameter use as below-
+
+function sayHello(name){
+    console.log("Hello " + name);
+}
+
+sayHello("Rahim");
+
+3. Now for function parameter value if we keep the value parameter empty it will give result undefined and if we use "" in the parameter then it will not show undefined. Example: 
+
+function sayHello(name){
+    console.log("Hello " + name);
+}
+
+sayHello("Rahim");
+sayHello("Karim");
+sayHello("");
+sayHello("");
+
+4. Now if we give the parameter a value and keep the value parameter empty then it will show the parameter value. Example:
+
+function sayHello(name = "test"){
+    console.log("Hello " + name);
+}
+
+sayHello("Rahim");
+sayHello("Karim");
+sayHello();
+sayHello();
+
+5. Now for multiple parameter value we can use concatening in the console.log as below-
+
+function sayHello(name = "test", age = "unknown", village = "unknown"){
+    console.log("Hello " + name+ "Your age is " +age+ " Years Old and your village name is " +village);
+}
+
+sayHello("Rahim", 23, "Rampur");
+sayHello("Karim", 27, "Mirpur");
+sayHello();
+sayHello();
+
+Result:----
+
+Hello RahimYour age is 23 Years Old and your village name is Rampur
+Hello KarimYour age is 27 Years Old and your village name is Mirpur
+Hello testYour age is unknown Years Old and your village name is unknown
+Hello testYour age is unknown Years Old and your village name is unknown
+
+
+-- Part 17-- JS Core Concept 1---
+
+1. Declaring variable and concatening with the multiple variable as below--
+
+const prdouctName = "Mobile";
+const productPrice = 40;
+const quantity = 2;
+const isAvailable = true;
+
+console.log("prdouctName = " + prdouctName +", productPrice = " + productPrice + ", quantity = " + quantity + ", isAvailable = " + isAvailable);
+
+
+--Part 18-- JS Core Concept 2--
+
+1. By using backtick key (` `) we can code with more cleanly as below--
+
+const prdouctName = "Mobile";
+const productPrice = 40;
+const quantity = 2;
+let isAvailable = true;
+
+//backtick key --> (` `)
+console.log(`prdouctName = ${prdouctName}, productPrice = ${productPrice}, quantity = ${quantity}, isAvailable = ${isAvailable}`);
+
+
+--Part 19-- JS Core Concept 3--
+
+1. By using array we can code more easily as below--
+
+const productInfo = ["Mobile", 40, 2, true];
+
+//backtick key --> (` `)
+console.log(`prdouctName = ${productInfo[0]}, productPrice = ${productInfo[1]}, quantity = ${productInfo[2]}, isAvailable = ${productInfo[3]}`);
+
+
+--Part 20-- JS Core Concept 4--
+
+1. By using object we can code easily as below--
+
+const productInfo = {
+    productName : "Mobile",
+    productPrice : 40,
+    productQuantity : 2,
+    isAvailabe : true
+}
+
+// by using object find out result individually
+// console.log(productInfo['productName']);
+// console.log(productInfo.productPrice);
+
+console.log(`productName = ${productInfo.productName}, productPrice = ${productInfo.productPrice}, quantity = ${productInfo.productQuantity}, isAvailable = ${productInfo.isAvailabe}`);
+
+
+--Part 21-- JS Core Concept 5--
+
+1. By using function we can code as follow--
+
+const productInfo1 = {
+    productName : "Mobile",
+    productPrice : 40,
+    productQuantity : 2,
+    isAvailabe : true
+}
+
+function showProductInfo(productDetails){
+    console.log(`productName = ${productDetails.productName}, productPrice = ${productDetails.productPrice}, quantity = ${productDetails.productQuantity}, isAvailable = ${productDetails.isAvailabe}`);
+}
+
+showProductInfo(productInfo1);
+
+2. Now for multiple value show for many products we should use return in function body and take variable for the function name with the taken variable name outside of the function. At last show in the console.log with the variable name of the outside of the function. Example:
+
+const productInfo1 = {
+    productName : "Mobile",
+    productPrice : 40,
+    productQuantity : 2,
+    isAvailabe : true
+}
+
+const productInfo2 = {
+    productName : "Computer",
+    productPrice : 100,
+    productQuantity : 4,
+    isAvailabe : true
+}
+
+const productInfo3 = {
+    productName : "Laptop",
+    productPrice : 500,
+    productQuantity : 3,
+    isAvailabe : true
+}
+
+function showProductInfo(productDetails){
+    return `productName = ${productDetails.productName}, productPrice = ${productDetails.productPrice}, quantity = ${productDetails.productQuantity}, isAvailable = ${productDetails.isAvailabe}`;
+}
+
+const mobileInfo = showProductInfo(productInfo1);
+const computerInfo = showProductInfo(productInfo2);
+const laptopInfo = showProductInfo(productInfo3);
+
+console.log(mobileInfo);
+console.log(computerInfo);
+console.log(laptopInfo);
+
+---Result---
+
+productName = Mobile, productPrice = 40, quantity = 2, isAvailable = true
+productName = Computer, productPrice = 100, quantity = 4, isAvailable = true
+productName = Laptop, productPrice = 500, quantity = 3, isAvailable = true
+
+
+--Part 22- JS Core Concept 6-- Type Convert
+
+1. For convert string to number and number to string and add two number use as below--
+
+let str = '1000';
+let n = 10;
+
+console.log(Number.parseInt(str) + n); //convert string to number and add the two number
+console.log(String(n)); //convert number to string
+
+2. Type conversion of multiple variable and add two number by taking extra two variable in console.log. Example: 
+
+let str1 = '1000';
+let str2 = '10';
+
+let str3 = (Number.parseInt(str1));
+let str4 = (Number.parseInt(str2));
+
+console.log(str3 + str4);
+
+
+
+--JS Starting from zero-- Part 1-- 
+
+1. There are 5 types of output system in JS. Example: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To JavaScript</title>
+</head>
+<body>
+
+    <p id="root"></p>
+    
+
+    <script>
+        // window.alert('I am learning JS');
+        // alert("I am learning JS");
+        // document.write("I am learing JS");
+        // console.log("I am learning JS");
+
+        document.getElementById('root').innerHTML = "I love JS";
+    </script>
+
+</body>
+</html>
+
+2. Now, by getElementId we can also use as below- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To JavaScript</title>
+</head>
+<body>
+
+    <p id="root"></p>
+
+    <h1 id="idH1"></h1>
+
+    <h3 id="idH3"></h3>
+    
+
+    <script>
+        // window.alert('I am learning JS');
+        // alert("I am learning JS");
+        // document.write("I am learing JS");
+        // console.log("I am learning JS");
+
+        document.getElementById('root').innerHTML = "I love JS";
+        document.getElementById('idH1').innerHTML = 'This Is Our Heading One';
+        document.getElementById('idH3').innerHTML = 'This Is Our Heading Two';
+
+    </script>
+
+</body>
+</html>
+
+3. As we know that id is unique we can't use second time the id. So, if we take two same id as below only work first one. Example:
+
+<body>
+
+    <h1 id="root"></h1>
+    <h5 id="root"></h5>
+
+
+    <script>
+        document.getElementById('root').innerHTML = "I love JS";
+    </script>
+
+</body>
+
+// it will show only h1 tag--
+
+4. Now we know that we can use class multiple time. So, for using class multiple time we should use index number in squart box(third bracket) befor innerHTML. Example: 
+
+<body>
+
+    <h1 class="root"></h1>
+    <h5 class="root"></h5>
+
+
+    <script>
+
+    document.getElementsByClassName('root')[0].innerHTML = "I love JS";
+
+    </script>
+
+</body>
+
+Note: we can use class multiple time and should use index number of the class.
+
+5. Now, we can use js file by seperate js file where we can use console.log and document.write statement to output of the js file.
+
+Note: JS execute line by line code. We should use ; at the last of the statement otherwise if we together the two statement in a same line it will occur error. But if the statement is line by line no need to use ; but it is best to use ; at the last of the statement.
+
+
+----JS Starting from zero-- Part 1-- Syntax
+
+1. Most of the time we should use ""(double quote) symbol in JS. But we can use also '' (single quote) in JS.
+
+we can't use double quote into the double quote statement and also in single quote into the single quote statement. But we can use single quote in double quote statement and double quote in single quote statement. For using double quote in double quote statement should use \" \" this sign. Example: 
+
+console.log("This \"is\" JavaScript"); //double quote into double quote
+
+console.log("I 'Love' JS"); //double quote into singe quote
+
+console.log('I "Love" ES6'); //single quote into double quote
+
+console.log('This is \'single quote\' into single quote'); // single quote into single quote
+
+2. Also use some syntax as below--
+
+console.log("This is for /using/ forward slash");
+
+console.log("This is for \\using\\ backward slash"); // for showing one backward slash use double backward slash 
+
+console.log("A quick brown fox \njumps over lazy dog") // for new line use \n 
+
+console.log("string value") // double quote for string value
+
+console.log(30); // for number value
+
+
+--Class 3-- User Input
+
+1. For user input and taking variable use as below-
+
+var x;
+x = prompt("Enter Your Name");
+
+console.log(x);
+document.write(x);
+
+
+--Part 4-- Variable Part 1
+
+1. Taking variable as below--
+
+// var myName;
+// myName = "Shaon";
+
+var myName = "Shaon"; // taking value of variable in same line.
+myName = "John";
+
+console.log(myName);
+
+
+--Operator--Comparision Operator--
+
+1. comparision operator returs boolean value true or false.
+
+var number1 = 4;
+var number2 = 4;
+console.log(number1 == number2);
+
+var x = 4;
+var y = 6;
+var result = x == y;
+console.log(result);
+
+2. comparision operator == consider the value only don't consider the data type. 
+ === this comparision operator consider with the value and data type. So below result should be false because of different data type.
+
+var a = 4;
+var b = "4";
+console.log(a === b);
+
+3.  != operator. Not equal != operator turn true value into fals and false value into true.
+
+var c = 4;
+var d = 6;
+console.log(c != d);
+
+4. Comparision Operator return boolean value
+ >, <, >=, <=
+
+var a = 10;
+var b = 11;
+console.log(a > b);
+
+var x = 5;
+var y = 6;
+console.log(x < y);
+
+var c = 11;
+var d = 11;
+var result = c >= d;
+console.log(result);
+
+5. Logical Operator
+// ||, &&
+// ||
+var x = (11 > 10);
+var y = (12 < 11);
+console.log(x || y);
+
+// &&
+
+var a = (10>9);
+var b= (9<10);
+console.log(a && b);
+
+6. Conditional Operator
+
+var a = (1 > 8) ? "Bangladesh" : "China";
+console.log(a);
+
+7. Assignment Operator
+// =
+
+var a = 20;
+console.log(a);
+var b = 12;
+var a = b;
+console.log(a); // a will show the value of b because of latest assingment.
+c = a + b;
+console.log(c);
+
+var myName = "Hello ";
+myName = myName + "World"
+console.log(myName);
+
+
+--Data Type--
+
+Five types of Data Type in JS
+
+//Number
+
+var a = 20;
+var b= 11;
+
+//String
+
+var a = "Shaon";
+var b = "4";
+
+// Boolean
+
+var isRunning = true;
+var isNotRunning = false;
+
+// Array
+
+var a = ["Shaon", 23, "Dhaka", true, 1, 3, 4];
+
+//Object
+
+var obj = {
+    Name: "Shaon",
+    age : 30,
+    villageName : Feni,
+}
+
+//Anothe JS data types are: 
+
+// undefined 
+// empty value
+// null
+//NaN
+
+
+
+-- Number Data Type--
+
+1. // Number Data Type
+
+var x = 3.123; //float number
+console.log(x);
+var x = 4; // integar number
+console.log(x); 
+
+
+// Exponential Number
+
+var x = 123e5;
+console.log(x);
+var x = 123 * 10 ** 5;
+console.log(x); // This will work as same 
+
+
+// string type number
+
+var number1 = "10";
+var number2 = "20";
+console.log(number1 + number2); // Only concatening two string type number only + is not working other arithmatic operator will work correctly.
+
+// Infinity Number
+
+var x = 25 / 0;
+console.log(x);
+
+//Convert to String
+
+var number = 187;
+var result = number.toString();
+console.log(number);
+
+//Convert to Binary
+
+var number = 187;
+var result = number.toString(2);
+console.log(result);
+
+
+//Convert to Octal
+
+var number = 187;
+var result = number.toString(8);
+console.log(result);
+
+
+//Converto to Hexadecimal
+
+var number = 187;
+var result = number.toString(16);
+console.log(result);
+
+
+// Precision (Remove the float number) For below if we use 4 then it will show all the float number
+
+var number = 3.1416;
+var result = number.toPrecision(1);
+console.log(result);
+
+
+//Convert Number To String and String To Number
+
+var x = 10;
+var y = x.toString();
+console.log(y);
+var b = parseInt(y);
+console.log(b);
+
+// Convert String to Number and Float Number
+
+var x = "3.14867";
+var y = parseInt(x);
+var z = parseFloat(x);
+console.log(y);
+console.log(z);
+
+// Multiple method using for converting number to string and string to number
+
+var x = 3.1416;
+var y = x.toString();
+console.log(y);
+var result = parseFloat(y.toString());
+console.log(result);
+
+
+//isNaN
+// isNaN results boolean value true or false. If the value is number it shows false and if the value is not number then it shows true.
+
+var a = "44";
+console.log(isNaN(a));
+
+var x = 44;
+var y = isNaN(x);
+console.log(y);
+
+
+---String Data Type---
+
+1. //String Data Type
+
+var str = "SomeThing"; // String Literal
+console.log(str);
+var str2 = String("SomeThing"); //String Constructor
+console.log(str2);
+
+//Convert Number to String
+
+var n = 20;
+var str = n + ""; //one way
+var str = String(n); // another way
+console.log(str);
+
+
+//Escape Notation
+
+var str = "This is a 'String'"; // Can't use "" quotation in "" quotation string
+var str = 'This is a "String"'; // Can't use '' quotation in '' quotation string
+var str = "This is a \"String\""; // if want to use same quotation then should use \ slash.
+var str = 'This is a \'String\''; // if want to use same quotation then should use \ slash.
+var str = "This is a \nString"; // for new line use \n
+var str = "This is a \tString"; // for tab space use \t.
+var str = "This is a \\\\String\\\\"; // for using \\ in string.
+console.log(str);
+
+
+//String Method 
+//Concat
+
+var a = "I am";
+var b = "Shaon ";
+var x = 30;
+var c = a.concat(" ", b, "Age is ", x);
+console.log(c);
+
+
+//Substring; start from index 0
+//for which value inserted into substr method parameter from that index number of string it will start from print.
+
+var a = "I am Shaon";
+var b = a.substr(5);
+console.log(b);
+console.log(a.charAt(2)); // for find out the character position in a string
+
+// To find out starting letter or words use startsWith mehtod
+var x = "I am John";
+console.log(x.startsWith("I am"));
+
+// To find out ends letter or words use endsWith method.
+var x = "A Brown Fox Jumps";
+console.log(x.endsWith("hudai"));
+
+
+// To Uppercase all letter
+var x = "a Quick Brown Fox Jumps";
+var y = x.toUpperCase();
+console.log(y);
+
+// To LowerCase all letter
+var x = " a Quick Brown Fox Jumps";
+var y = x.toLowerCase();
+console.log(y);
+
+//For removing unwanted space use trim method.
+var x = "       My Name is Shoan        ";
+console.log(x.trim());
+
+
+//String to Array
+
+var x = "A Quick Brown Fox Jumps";
+console.log(x.split("")); //convert into array by individual letter.
+console.log(x.split(" ")) //convert into array by word by giving space in quotatoin.
+
+
+---Boolean Data Type---
+
+1. Without true or false other data type boolean value will be true.
+Example:
+
+var x = "This is Something";
+var y = Boolean(x);
+console.log(y); // Store true value
+
+2. For undefined variable boolean value should be false. Example:
+
+var y;
+console.log(Boolean(y));
+
+3. For null value boolean value should be false. Example:
+
+var n = null;
+console.log(Boolean(n));
+
+
+---Array Data Type---
+
+1. //Array Data Type
+
+var countries = ["Bangladesh", "USA", "UK"];
+console.log(countries);
+console.log(countries[2]); //find out array value by index number of Array which starting from 0.
+console.log(countries.length); // find out the array length.
+
+
+//replace the array value
+
+// countries[1] = "Poland";
+// console.log(countries);
+
+
+// store in a variable of array index value
+
+var countries = ["Bangladesh", "USA", "UK"];
+var singleCountry = countries[2];
+console.log(singleCountry);
+
+
+//Add extra value in array
+var countries = ["Bangladesh", "USA", "UK"];
+countries[3] = "Portugal";
+console.log(countries);
+countries[countries.length] = "Norway";
+console.log(countries);
+
+
+//Array multiple value can pass by using push and by pop it will remove from last value of the array.
+var countries = ["Bangladesh", "USA", "UK"];
+countries.push("China", "India", "Japan", "Korea");
+console.log(countries);
+countries.pop();
+console.log(countries);
+
+
+// For removing the array value at the starting use shift method and for adding the array value at starting of the array use unshift method.
+
+var countries = ["Bangladesh", "USA", "UK"];
+countries.shift();
+console.log(countries);
+countries.unshift("Pakistan");
+console.log(countries);
+countries.unshift("Bangladesh", "Nepal", "China");
+console.log(countries);
+
+---Array Data Type Last Part---
+
+1. // Using empty array to pass value using push method.
+var number = [];
+number.push(1, 2, 3, 4);
+console.log(number);
+
+2. //Convert string to array by using split method
+
+var str = "Bangladesh";
+var arr = str.split();
+console.log(arr);
+
+3. For print every character into array use empty string in the split method. Example.
+
+var str = "Bangladesh";
+var arr = str.split("");
+console.log(arr);
+
+4. Because of space array take the space into empty string.
+
+var str = "Hello World";
+var arr = str.split("");
+console.log(arr);
+
+5. //For making word by word array for a large string.
+
+var str = "Bangladesh is a beautiful country";
+var arr = str.split(" ");
+console.log(arr);
+
+6. //String to Array
+
+var countries = ["Bangladesh", "USA", "UK"];
+var result = countries.toString(); // Because of using toString method after every word it will show , sign so it is not completely conversion.
+console.log(result);
+var result = countries.join(" "); // using empty string with one white space it will convert array to string perfectly.
+console.log(result);
+
+7. //for all string to array and array to string conversion 
+
+var str = "I Love JS";
+console.log(str);
+var arr = str.split(" ");
+console.log(arr);
+var arrToStr = arr.join(" ");
+console.log(arrToStr);
+var strToArr = arrToStr.split(" ");
+console.log(strToArr);
+strToArr.push("Love It");
+console.log(strToArr);
+var ArrToStr = strToArr.join(" ");
+console.log(arrToStr);
+
+
+8. // Concat with two array
+
+var countries1 = ["Bangladesh", "China", "Pakistan"];
+var countries2 = ["USA", "UK", "Nepal"];
+
+var result = countries1.concat(countries2);
+console.log(result);
+result.sort(); //sorting ascending
+console.log(result);
+result.reverse(); //sorting descending
+console.log(result);
+
+
+---Object---
+
+1. Find out value one array into another array. Example:
+
+//Multiple array into one another
+var arr = [1, 2, ["a", "b"], 4, 5];
+console.log(arr);
+console.log(arr [2][1]);
+
+
+var arr2 = [1, 3, ["a", ["Word A", "Word B"], "b"], 5, 7];
+console.log(arr2);
+console.log(arr2 [2][1][1]);
+
+2. //Array & obejct value find out
+var arr3 = [1 , 2, ["a", "b"], {prop1: "Item1", prop2: "Item2"}];
+console.log(arr3);
+console.log(arr3[3].prop1);
+
+3. // Array & object value find out in object multiple array
+var arr4 = ["Item1", "Item2", {prop1: "Item01", prop2: [2, 3, ["a", "b"]]}];
+console.log(arr4);
+console.log(arr4[2].prop2[2][1]);
+
+4. // value find out from object array
+var obj = {
+    prop1: "prop 1",
+    prop2: "prop 2",
+    prop3: ["Item Number 1]", "Item Number 2"]
+};
+
+console.log(obj);
+
+var result = obj.prop3[1];
+console.log(result);
+
+
+---More Array & Object---
+
+1.
+1. Find out value one array into another array. Example:
+
+//Multiple array into one another
+var arr = [1, 2, ["a", "b"], 4, 5];
+console.log(arr);
+console.log(arr [2][1]);
+
+
+var arr2 = [1, 3, ["a", ["Word A", "Word B"], "b"], 5, 7];
+console.log(arr2);
+console.log(arr2 [2][1][1]);
+
+2. //Array & obejct value find out
+var arr3 = [1 , 2, ["a", "b"], {prop1: "Item1", prop2: "Item2"}];
+console.log(arr3);
+console.log(arr3[3].prop1);
+
+3. // Array & object value find out in object multiple array
+var arr4 = ["Item1", "Item2", {prop1: "Item01", prop2: [2, 3, ["a", "b"]]}];
+console.log(arr4);
+console.log(arr4[2].prop2[2][1]);
+
+4. // value find out from object array
+var obj = {
+    prop1: "prop 1",
+    prop2: "prop 2",
+    prop3: ["Item Number 1]", "Item Number 2"]
+};
+
+console.log(obj);
+
+var result = obj.prop3[1];
+console.log(result);
+
+
+---Undefine, null, NaN---
+
+1. //undefine
+var a;
+console.log(typeof a); //undefine value
+console.log(a == undefined);
+console.log(a === undefined);
+
+//null
+var a = null;
+console.log(typeof a); // null value
+console.log(a == null);
+console.log(null == undefined); //Boolean value true
+console.log(null === undefined); // null & undefined not a same type value
+
+//empty string
+var b = "";
+console.log(typeof b); 
+console.log(b);
+console.log(a == b);
+console.log(a === b);
+
+
+//NaN
+
+var c = 10 / "h";
+console.log(c);
+console.log(NaN == null);
+console.log(NaN == b);
+console.log(NaN == undefined);
+
+
+---Premetive Data Type and Reference Data Type---
+
+1. // Premetive Data Type = Number, String, Boolean -- Deals with value
+// Reference Type Data = Array, Object -- Deals with Address
+
+//Number
+let a = 7;
+let b = a;
+console.log(b);
+a = 10;
+console.log(b); //It will not change the value of b because of assigning a value. But a will output latest value.
+
+//String
+let x = "Shaon";
+let y = x;
+console.log(y);
+x = "Rahi";
+console.log(y); //It will not change the value of y because of assigning x value. But x will output latest value.
+console.log(x);
+
+
+//Reference Type Data.. It will change the value if assigns latest value and work on latest value.
+
+var number = [1, 2, 3];
+var newNumber = number;
+console.log(number);
+console.log(newNumber);
+number[1] = 20;
+console.log(number); 
+console.log(newNumber)
+
+
+--Control Flow-- if, else if, else---
+
+1. if(true){
+    console.log("Statement will execute"); //if statement true will execute it
+}
+else{
+    console.log("Statement will not execute"); // if statement false will execute it.
+}
+
+
+2. var age = prompt();
+if(age >=50){
+    console.log("Old")
+}
+else{
+    console.log("Under 50")
+}
+
+
+---Conditional Part 1---
+
+1. Multiple if and else if uses by user input. Example: 
+
+var age = prompt("Enter Your Age");
+if(age >= 50){
+    console.log("Old !")
+}else if(age >=30 && age <50){
+    console.log("Under 50 but above and equal to 30")
+}else if(age >= 18 && age < 30){
+    console.log("Under 30 but above or equal to 18")
+}else if(age < 18 && age > 0){
+    console.log("Under 18 !")
+}else{
+    console.log("Invalid Input Number !")
+}
+
+
+2. 
+
+var n = 12;
+if(n < 10){
+    console.log("This number", n , "is smaller than 10")
+}else if(n < 20){
+    console.log("This number",n,"is smaller than 20")
+}else {
+    console.log("This number",n,"is greater than 10")
+}
+
+3. using multiple variable. Example: 
+
+var n = 24;
+var m = 24;
+if(n >= m){
+    console.log("n is greater than m")
+}else{
+    console.log("n is smaller than m")
+}
+
+
+--Condition Part 2--
+
+1. 
+var personOne = "Jamal";
+var personTwo = "Kamal";
+var AreTheyBrother = true;
+if(personOne == "Jamal" && personTwo == "Kamal" && AreTheyBrother ==true){
+    console.log("They Are Brother")
+}else{
+    console.log("They are not brother")
+}
+
+2. Find out the number is positive or negative.
+
+var n = 0;
+if(n > 0){
+    var result = "This number " + n + " is Positime";
+}else {
+    var result = "This number " + n + " is negative"
+}
+console.log(result);
+
+3. /Odd or Even number find out 
+
+var n = 12;
+if(n % 2 == 0){
+    console.log("Even Number")
+}else{
+    console.log("Odd Number")
+}
+
+4. Find out even and odd number by advance.
+
+var n = 12;
+var result; // undefined variable
+var remainder = n % 2;
+if(n == 0){
+    result = "This is a 0 value"
+}
+else if(remainder == 0){
+    result = "This is an even number"
+}else{
+    result = "This is an odd number"
+}
+console.log(result);
+
+
+---Switch Statement---
+
+1. Switch statement works as like as if, else if, else condition. Example:
+
+//If, else if, else condition for understanding
+
+var choice = prompt();
+var text;
+
+if(choice == "a"){
+    text = "You have chosen option 1";
+}else if(choice == "b"){
+    text = "You have chosen option 2";
+}else if(choice == "c"){
+    text = "You have chosen option 3";
+}else{
+    text = "No option has been selected";
+}
+
+console.log(text);
+
+//Switch Statement
+
+var choice = prompt();
+var text;
+
+switch(choice){
+    case "a":
+        text = "You have chosen option 1";
+        break;
+    case "b":
+        text = "You have chosen option 2";
+        break;
+    case "c":
+        text = "You have chosen option 3";
+        break;
+    default: 
+        text = "No option is selected";
+}
+
+console.log(text);
+
+2. // Print all days name by switch
+
+switch(1){
+    case 1: 
+        console.log("Sunday");
+        break;
+    case 2:
+        console.log("Monday");
+        break;
+    case 3:
+        console.log("Tuesday");
+        break;
+    case 4:
+        console.log("Wednesday");
+        break;
+    case 5:
+        console.log("Thursday");
+    case 6:
+        console.log("Friday");
+        break;
+    case 7:
+        console.log("Saturday");
+    default:
+        console.log("No days are selected");
+}
+
+
+3. // Find out all days by using userinput
+
+var userInput = prompt();
+var result;
+
+switch(userInput){
+    case "1":
+        result = "Sunday";
+        break;
+    case "2":
+        result = "Monday";
+        break;
+    case "3":
+        result = "Tuesday";
+        break;
+    case "4":
+        result = "Wenesday";
+        break;
+    case "5":
+        result = "Thursday";
+        break;
+    case "6":
+        result = "Friday";
+        break;
+    case "7":
+        result = "Saturday";
+    default:
+        result = "No days are selected";
+}
+
+console.log(result);
+
+
+--Condition Exercise with If, else if, else and switch statement---
+
+1. Result System with If, else if & else statement with user input. Example:
+
+var number = prompt("Enter Your Number");
+var grade;
+
+if(number <= 100 && number >= 80){
+    grade = "A+";
+}else if(number < 80 && number >= 70){
+    grade = "A";
+}else if(number < 70 && number >= 60){
+    grade = "A-";
+}else if(number < 60 && number >= 50){
+    grade = "B";
+}else if(number < 50 && number >= 40){
+    grade = "C";
+}else if(number < 40 && number >= 33){
+    grade = "D";
+}else if(number < 33 && number >= 0){
+    grade = "F";
+}else{
+    grade = "Invalid Grade System";
+}
+
+console.log(grade);
+
+
+--For Loop--
+
+1. Find out  0 to 10
+
+for(var i = 0; i < 10; i++){
+    console.log("Shaon");
+}
+
+2. Find out 1 to 100 by increment 2 
+for(var i = 1; i <= 100; i += 2){
+    console.log(i);
+}
+
+3. //Find out even number by for loop
+for(var i = 0; i <=100; i++){
+    if(i % 2 == 0){
+        console.log(i);
+    }
+}
+
+3. Find out even number by increment 10 with for loop
+for(var i = 0; i <= 100; i += 10){
+    if(i % 2 == 0){
+        console.log(i);
+    }
+}
+
+4. Find out odd number by increment 10 with for loop
+for(var i = 1; i <= 100; i += 10){
+    if(i % 2 == 1){
+        console.log(i);
+    }
+}
+
+5. For loop decrement
+for(var i = 20; i > 1; i--){
+    console.log(i);
+}
+
+
+---While Loop---
+
+1. //While Loop
+
+//Initialization, condition, increment/decrement
+
+
+//Print 0 to 9
+/*
+var i = 0;
+while(i < 10){
+    console.log("Shaon");
+    i++
+}
+*/
+
+// Print 0 to 10
+/*
+var i = 0;
+while(i <=10){
+    console.log(i);
+    i++;
+}
+*/
+
+/*
+var i = 0;
+while(i <= 10){
+    if(i == 4){
+        console.log("This is Four");
+    } 
+    console.log(i);
+    i++;
+}
+*/
+
+//Find out odd number by while loop
+
+/*
+var i = 0;
+
+while(i <= 10){
+    if(i % 2 == 1){
+        console.log(i);
+    }
+    i++;
+}
+*/
+
+// 1+2+3+4+5+....
+var i = 1;
+var sum = 0;
+product = 1;
+
+while(i <= 10){
+    sum = sum + i;
+    product = product * i;
+    i++;
+}
+
+console.log(sum);
+console.log(product);
+
+
+---Do While Loop---
+
+1. In while loop if the condition is false then it will not execute. Example:
+
+var isRunning = false;
+while(isRunning){
+    console.log("I am Running");
+}
+
+2. In Do While Loop if condition if the condition is false it will execute for once and for true condition it will execute as usual we know that. Example:
+
+var isRunning = false;
+
+do{
+    console.log("I am Running");
+}while(isRunning);
+
+3. Print 1 to 10 in Do While Loop. Example:
+
+var i = 0;
+
+do{
+    console.log(i);
+    i++;
+}while(i <= 10);
+
+
+
+---Break & Continue---
+
+1. In break statement it breaks the executation in loop and stops there. Example:
+for(i = 1; i <= 10; i++){
+    console.log(i);
+    break;
+}
+
+In above for loop it will execute only 1 time.
+
+2. If we want to print 1 to 7 using break below code.
+
+for(i = 1; i <= 10; i++){
+    console.log(i);
+    if(i == 7){
+        break;
+    }
+}
+
+note: if we use console.log after if condition then it will print 1 to 6.
+
+3. For continue statement it will skip the value of the continue statement condition.Example:
+
+for (i = 1; i <= 10; i++){
+    if(i == 5){
+        continue;
+    }
+    console.log(i);
+}
+
+
+---Array Traversing---
+
+1. String Traversing/Iteration. Example:
+
+let myName = "Hello World";
+
+for(var i = 0; i < myName.length; i++){
+    console.log(`index ${i}`); // Index number shown
+    console.log(myName[i]); 
+}
+
+2. Array Traversing. Example:
+
+var myName = "Hello World";
+
+for(i = 0; i < myName.length; i++){
+    console.log(`index ${i}`); // Index number shown
+    console.log(myName[i]); 
+}
+
+
+
+---For in Loop & For each Loop---
+
+Note: for in = string/array/object execute.
+for of = string/array
+
+1. Using for in loop find out string index number. Example:
+
+let myName = "I Love JavaScript";
+
+for(var x in myName){
+    console.log(x);
+}
+
+2. For of loop only print the value. Example:
+
+let myName = "I Love JavaScript";
+for(var x of myName){
+    console.log(x); //for of loop only print the value 
+}
+
+by using template literal code as below
+
+let myName = "I Love JavaScript";
+for(var x of myName){
+    // console.log(x); //for of loop only print the value 
+    console.log(`value ${x}`); //template literal ES6
+}
+
+3. //for in loop in array for index number
+let foodName = ["Cake", "Chocolate", "Ice Cream"];
+for(x in foodName){
+    console.log(x);
+}
+
+//for in loop array by template literal of Es 6
+let foodName = ["Cake", "Chocolate", "Ice Cream"];
+for(var x in foodName){
+    console.log(`Our Item: ${x}`);
+}
+
+4. //for in loop in object
+
+let person = {
+    myName : "Atif Aslam",
+    profession : "Singer",
+    country : "Pakistan",
+    age : 35
+}
+
+for(x in person){
+    console.log(`Property : ${x} value ${person[x]}`);
+}
+
+note: By for of loop object will not be execute.
+
+
+--Function--
+
+1. Function example:
+ 
+function saySomething(){
+    console.log("Hello");
+    console.log("I Love JavaScript");
+    console.log("Shaon");
+}
+
+saySomething();
+saySomething();
+saySomething();
+
+Note: We can use function as much as we want to use. By using function we can reduce the coding same thing repeatedly.
+
+
+---Function - Parameters, Argument & Return---
+
+1. Function with parameter. Example:
+
+function saySomething(para01){
+    alert(para01);
+}
+
+saySomething("Hello World !");
+
+2. // Function with template string
+
+function saySomething(para01){
+    alert(`Hello ${para01}`); //using template string
+}
+
+saySomething("World");
+
+3. By default assigning for parameter working as below. But if we assign value in function after the default value then the latest value will be shown.
+
+function saySomething(para01 = "text"){
+    alert(`Hello ${para01}`);
+}
+
+saySomething("World");
+
+
+4. //Function with multiple parameter
+
+function saySomething(fname, lname, age){
+    console.log(`Hello ${fname} ${lname}, age: ${age}`)
+}
+
+//saySomething("Ataur", "Rahman", 25);
+//Also use the value by assigning in variable as below
+
+let firstname = "Ataur";
+let lastname = "Rahman";
+let age = 25;
+
+saySomething(firstname, lastname, age);
+
+
+5. //We can add double quote in the parameter value so that it can not be shown undefined when the parameter has no value and also can add extra parameter and value as below.
+
+function saySomething(fname = " ", lname = " ", age = " ", village = " "){
+    console.log(`Hello ${fname} ${lname} age: {age} village: ${village}`);
+}
+let firstname = "Ataur";
+let lastname = "Rahman";
+let age = 25;
+let village = "Rampur";
+
+saySomething(firstname, lastname, age, village);
+
+6. //For store function in a variable we should use return as below. By using console.log we can not store function in a variable.
+
+function addTwoNumbers(a = 0, b = 0) {
+    return(a+b);
+}
+
+let sum = addTwoNumbers(10, 20); //function store in a variable
+console.log(sum);
+
+
+
+//Another example of using return value
+function saySOmething(fname = " ", lname = " ", age = " ", village = " ") {
+    return(`Hello ${fname} ${lname} age: ${age} village: ${village}`);
+}
+
+let firstName = "Ataur";
+let lastName = "Rahman";
+let age = 25;
+let village = "Rampur";
+
+var myDetails = saySOmething(firstName, lastName, age, village);
+console.log(myDetails);
+
+
+7. //By using function multiple argument as below
+
+function randomNumber(name){
+    return(`My Name is ${name}`);
+}
+
+let name1 = randomNumber("Ataur");
+let name2 = randomNumber("Rahman");
+let name3 = randomNumber("Shaon");
+
+console.log(name1, name2, name3); 
+
+
+
+---Function Expression & Arrow Function---
+
+1. //Normal Function
+
+function saySomething (name){
+    console.log("Hello " + name);
+}
+
+saySomething("Shaon");
+
+
+2. //Function Expression
+
+let saySomething1 = function(name){
+    console.log("Hello " + name);
+}
+
+saySomething1("Shaon");
+
+
+3. /Arrow Function
+//In arrow function for one parameter no need to use parenthesis but for multiple parameter there should be use parenthesis
+
+
+let saySomething2 = (name1, name2) => {
+    console.log("Hello " + name1 + name2);
+}
+
+saySomething2("Ataur ", "Rahman");
+
+
+
+---Array Iteration Using For Each Loop---
+
+1. //Array Iteration For Each
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+//1st Parameter : Element/Item
+//2nd Parameter : Index Number
+//3rd Parameter : Whole Array
+
+foods.forEach(function(item, index, wholeArray){
+    console.log(item, index, wholeArray);
+});
+
+Note: in for each function there should be only 3 parameter.
+
+2. //Another way of for each function expression
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+let printEverything = function(item, index, wholeArray){
+    console.log(item);
+};
+
+foods.forEach(printEverything);
+
+3. //Using template literals in foreach
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+let result = function(item, index){
+    console.log(`Index Number: ${index}, Item Number: ${item}`);
+};
+
+foods.forEach(result);
+
+//Note: Output should follow the parameter sequence whether I can change the parameter in output.
+//Note: For foreach function there is no return.
+
+
+4. //Another way of foreach function in a variable
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+let foodsName = foods.forEach(function(item, index, arr){
+    console.log(item, index, arr);
+});
+
+
+5. //Array Iteration in Map
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+function addSomething(item){
+    return `${item} is a food`;
+}
+
+let result = foods.map(addSomething);
+
+console.log(result);
+
+
+
+//Another way of map with template literals
+
+var foods = ["Cake", "Ice Cream", "Chocolate", "Bread"];
+
+let foodItem = foods.map(function(item){
+    return `${item} good food`;
+});
+
+console.log(foodItem);
+
+
+
+6. // Finding square number with mapping
+
+var number = [1, 32, 31, 24];
+
+var squareNumber = number.map(function(item){
+    return item * item; 
+});
+
+console.log(squareNumber);
+
+
+Note: In foreach we can only iterate the array but in map we can iterate the array and also create an new array.
+
+
+---Object Method---
+
+1. //Object Method
+
+let person  = {
+    firstName : "Ataur",
+    lastName : "Shaon",
+    DOB : "29-08-1990", // String, number, array, object, function
+
+    fullName : function(){
+        return `${this.firstName} ${this.lastName}`; // In same object in function or same method for calling the object property should use this keyword.
+    }
+}
+
+console.log(person.firstName);
+console.log(person.fullName()); //fullName property is a method now so need to use parenthesis.
+
+
+// In JavaScript all variable are working as object, here we are counting the length like object, so in javascript variables are also work as object.
+
+let str = "Hello World !"; 
+console.log(str.length); 
+
+console.log(str.split()); // Creating array using split method.
+
+
+
+---Math Object---
+
+1. //Math Object
+
+console.log(Math.E);
+console.log(Math.PI);
+
+var n = 4.589;
+
+console.log(Math.abs(n)); // find absolute value
+console.log(Math.floor(n)); // find floor value of n  
+console.log(Math.ceil(n)); // find ceilling value of n
+console.log(Math.round(n)); // round the value of n
+
+console.log(Math.max(500, 400)); //find maximum value
+console.log(Math.min(1, 2, 3, 4)); // find minimum value
+
+console.log(Math.pow(2, 4)); // find out the power of the value
+
+console.log(Math.sqrt(9)); // find square root of the value
+
+
+//Find out random number
+
+console.log(Math.random()); //Creating random number
+console.log(Math.round(Math.random() * 50)); //Find out round random number from 1 to 50.
+
+
+---Date Function---
+
+1. Date Function 
+
+var date = new Date();
+
+console.log(date);
+console.log(date.toString()); // date convert into string
+console.log(date.toLocaleDateString()); // local date shown
+console.log(date.toTimeString()); //local time shown
+
+
+console.log(date.getFullYear()); //Which year is running
+console.log(date.getMonth()); //which month is running
+console.log(date.getDate());// which date is running
+console.log(date.getHours()); // which hour is running
+console.log(date.getMinutes()); //which minute is running
+console.log(date.getSeconds()); //which second is running
+console.log(date.getMilliseconds()); //which miliseconds are running
+console.log(date.getDay()); // which day is running
+
+
+--- var, let, const ---
+
+1. By var we can reassign the variable and also redeclare many times.
+
+var a = 6;
+a = a +10; // reassign of the variable
+
+var a = "Shaon"; // redeclare of the same variable
+console.log(a);
+
+
+2. By let we can reassign the variable but not redeclare the variable by let.
+
+
+let b = 6;
+b = b + 10;
+
+// let b; // not redeclarable by let
+console.log(b);
+
+
+3. By const we can't reassign the variable and redeclare the variable.
+
+const c = 7;
+// c = c * 8; // can't reassign by const it will show error
+
+console.log(c);
+
+
+---Local Scope & Global Scope---
+
+1. //Global scope
+
+var a = 1;
+let b = 2;
+const c = 3;
+
+console.log(`Global Scope:`, a, b, c);
+
+
+//Local Scope
+
+function test(){
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log(`Function Scope:`, a, b, c);
+}
+test();
+
+
+2. Now, if we want to access golabal scope into local scope it can accessable but from local scope it is not accessable to the gloabal scope. Example:
+
+//Global scope
+
+var a = 1;
+let b = 2;
+const c = 3;
+var d = 10;
+
+console.log(`Global Scope:`, a, b, c);
+
+
+//Local Scope
+
+function test(){
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log(`Function Scope:`, a, b, c, d); //accessing global scope by the variable d
+}
+test();
+
+
+3. //Global scope
+
+var a = 1;
+let b = 2;
+const c = 3;
+var d = 10;
+
+console.log(`Global Scope:`, a, b, c);
+
+
+//Local Scope
+
+function test(){
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log(`Function Scope:`, a, b, c, d); //accessing global scope by the variable d
+}
+test();
+console.log(`Global Scope:`, a, b, c); // no value has been changed in function scope
+
+if(true){
+    var a = 7;
+    let b = 8;
+    const c = 9;
+    console.log(`If Scope:`, a, b, c);
+}
+
+console.log(`Global Scope:`, a, b, c); // only a value has been changed because of using var. So, we can say that by using var we can access from global scope and local scope as well.
+
+
+for(var a = 0; a < 10; a++){
+    console.log(`Loop Scope:`, a);
+}
+
+console.log(`Global Scope:`, a, b, c); // only a value has been changed because of using var if we use let then the value will not change.So, we can say that by using var we can access from global scope and local scope as well.
+
+
+
+
+---JavaScript Mid to Advance Level---
+=====================================
+
+--What is OOP Class 44--
+
+
+--Obejct Oriented Programming Class 45--
+
+1. // Class (ES6)
+// Class is a template for creating object
+
+let person1 = {
+    firstName : "Ataur",
+    lastName : "Shaon",
+    DOB : "23-03-1993",
+    fullIName : function(){
+        console.log(`${this.firstName} ${this.lastName}`)
+    }
+};
+
+
+let person2 = {
+    firstName : "Rahi",
+    lastName : "Raihan",
+    DOB : "23-03-1992",
+    fullName : function(){
+        console.log(`${this.firstName} ${this.lastName}`);
+    }
+};
+
+//At first we take two object with same property and method. So, If we need 500 person information then we can't write code for 500 times. For solve this problem we canu use class template by following
+
+
+2. //Control multiple value by class template
+//Class first letter should be capital letter
+
+class person {
+    constructor(fName, lName, birthDay){
+        this.firstName = fName;
+        this.lastName = lName;
+        this.dob = birthDay;
+    }
+    fullInfo(){
+        console.log(`${this.firstName} ${this.lastName} ${this.dob}`); //method
+    }
+};
+
+let person1 = new person("Ataur", "Shaon", "23-03-1992");
+person1.firstName = "Samin"; // changing the firstName value by object
+console.log(person1.fullInfo()); // find all value by method
+
+
+let person2 = new person("Rahi", "Raihan", "23-03-1992");
+console.log(person2.fullInfo());// find all value by method
+
+
+let person3 = new person("Mamun", "Rashid", "23-03-1994");
+console.log(person3.fullInfo());// find all value by method
+
+
+
+--Class 46 Sub Class & Inheritance--
+
+1. Note: We can inherit one class to another by extends keyword and also link up with the other class by super method and write the parameter of the inherited class.  
+
+//Sub Class
+//Inheritance
+
+
+//1st class
+
+class Person {
+    constructor(fname, lname){
+        this.firstName = fname;
+        this.lastName = lname;
+    }
+    greeting(){
+        console.log(`Hello ${this.firstName} ${this.lastName}`);
+    }
+};
+
+
+
+//2nd class
+
+class Customer extends Person{ //inherit the class Person
+    constructor(fname, lname, phone, memberId){
+        super(fname, lname); //link with the inherited class by super method
+
+        this.phone = phone;
+        this.memberId = memberId;
+    }
+    fullName(){
+        console.log(`Welcome ${this.firstName} ${this.lastName}`);
+    }
+};
+
+
+let person1 = new Person("Ataur", "Shaon");
+console.log(person1);
+console.log(person1.greeting()); //accessing method from own class
+console.log(person1.fullName()); // not accessable from inherited class to base class
+
+
+let person2 = new Customer("Rahi", "Raihan", 01823578649, 123);
+console.log(person2);
+console.log(person2.greeting()); //accessing method from the base class by inheritance
+console.log(person2.fullName()); // accessing method from own class
+
+
+
+---Class 47 Static Function---
+
+1.//Static Function
+
+
+class Person{
+    constructor(fname, lname){
+        this.firstName = fname;
+        this.lastName = lname;
+    }
+    greeting(){
+        console.log(`Hello ${this.firstName} ${this.lastName}`);
+    }
+    static test(){ //declaring static function
+        console.log(`I am Static Function`)
+    }
+}
+
+let person1 = new Person("Ataur", "Shaon");
+console.log(person1);
+console.log(person1.greeting()); //function output of the class with object
+
+console.log(Person.test()); 
+
+// static function output can not be shown with the object. For showing static function output we should use the class name with the function. But for function expression or anonymus function we can create an object and see the output of the function.
+
+function expression is a object value but static function is a class value.
+
+
+
+---Class 48 What is DOM (Document Object Model)---
+
+1. 
+
+
+
+
+---Class 49 Expoloring in DOM---
+
+
+1. We can take ol, li for some programming names and ul, li for some link of social sites and take two form. 
+
+Then also use skeleton cdn for some css design.
+
+
+2. //DOM Exploring
+
+let val;
+
+val = this; // access whole website
+val = window; //access whole website
+val = window.document; //access all the document of the website
+val = document; //access all the document
+val = document.all; // turn into array of the whole website
+val = document.all[32]; //accessing by the index number of the whole websites
+val = document.all.length; // find out the length of the array of the whole document of the page.
+val = document.head; //accessing head tag
+val = document.body; //accessing body part of the page
+val = document.doctype; //accessing doctype html
+val = document.domain; // accessing the domain name of the live server
+val = document.URL; //accessing the url of the live server
+val = document.characterSet; //accessing the characterset of the page
+val = document.contentType; //find out the content type of the page
+val = document.forms; //accessing the forms of the page
+val = document.forms[0].method; //accessing method of the forms which is for backend
+val = document.forms[0].action; //accessing action of the forms which is for backend
+
+
+val = document.links; //acessing link of the page
+val = document.links[0]; //accessing link by index number
+val = document.links[0].href; //accessing link by index and href attribute
+val = document.links[0].className; //accessing link by classname
+val = document.links[0].classList; //find out classlists of the link tag
+
+val = document.images; //find out images of the page
+
+val = document.scripts; //find out script tags of the page
+val = document.scripts[0]; //find out script tag
+val = document.scripts[0].src; //find out src attribute
+
+val = document.scripts[0].getAttribute('src');
+
+
+console.log(val);
+
+
+
+---Class 50 DOM Selector (Single Element)---
+
+
+1. let val;
+
+//Getting an element
+val = document.getElementById("document-title"); 
+val = document.getElementById("document-title").id; //accessing ID name by DOM
+val = document.getElementById("document-title").className; //accessing class name by DOM 
+
+
+2. //Changing style
+
+document.getElementById("document-title").style.background = "red"; //changing background color of this ID document
+document.getElementById("document-title").style.color = "#ffffff"; //changing font color
+document.getElementById('document-title').style.padding = '20px'; // padding 
+document.getElementById('document-title').style.fontSize = '60px' // fontsize 
+document.getElementById('document-title').style.display = 'none'; //display hide
+document.getElementById('document-title').style.display = 'block' //display block or show 
+document.getElementById('document-title').style.marginTop = '60px';
+
+
+3. //Changing content
+
+document.getElementById('document-title').textContent = 'This is textcontent'; //changing textcontent
+document.getElementById('document-title').innerText = 'Hello world'; // changing textcontent
+document.getElementById('document-title').innerHTML = '<i>Hello World</i>'; // changing to italic
+document.getElementById('document-title').innerHTML = '<a href = "http://www.google.com">Hello World</a>'; // link tag
+
+
+4. //document get element by variable
+
+let val = document.getElementById('document-title');
+
+val.style.background = 'green'; //change background color by DOM variable
+val.innerText = 'My name is Shaon'; //changing textcontent
+val.style.color = 'red'; //changing color 
+
+console.log(val);
+
+5. //document.querySelector
+
+let myStyle;
+
+myStyle = document.querySelector('#document-title'); //id declare by #
+
+myStyle.style.background = 'red';
+myStyle.style.color = '#ffffff';
+myStyle.style.padding = '40px';
+
+
+6. //getting HTML tag by query selector
+
+myStyle = document.querySelector('h3');
+myStyle.style.background = '#dddddd';
+
+myStyle = document.querySelector('ol'); //access ordered list in html
+myStyle = document.querySelector('ol li'); // only access first li element of ordered list
+myStyle = document.querySelector('li:last-Child'); //accessing last li
+myStyle = document.querySelector('li:nth-child(2)'); //accessing nth li
+
+myStyle = document.querySelector('#myList'); //access ol list by id
+myStyle = document.querySelector('#myList li'); //only access first li element of ordered list
+myStyle.style.background = 'blue'; // background color in first li
+myStyle.style.innerText = 'Rubi'; //change text in first li
+
+myStyle = document.getElementById('listStyle');
+myStyle.style.color = 'red';
+
+myStyle = document.querySelector('.document'); //accessing class by query selector
+myStyle.style.background = 'orange'; //changing background color by accessing class
+myStyle.style.fontSize = '50px';
+
+
+console.log(myStyle);
+
+
+Note: by above code we can access single id and class.Not accessable multiple id and class.
+
+
+---Class 51 DOM Multiple Selector---
+
+1. //DOM Selector (Multiple Elements)
+
+let list = document.getElementsByClassName('sample-class'); //for accessing multiple elements here create array by this
+list[0].style.background = 'red'; //accessing by array index number
+list[0].style.color = '#ffffff'; 
+list[0].style.padding = '30px';
+list[0].textContent = 'Hello';
+
+
+console.log(list[0]);
+
+
+2.
+
+let list = document.getElementsByTagName('li'); //access the all tag of li by array
+
+list = document.querySelector('ul').getElementsByTagName('li');//access the all tag by query selector of li by array
+list[0].style.background = 'orange';
+list[0].textContent = 'Ataur Shaon'; //change text
+list[0].innerHTML = '<a>Instagram</a>';
+list[0].style.color = 'red'; //change ul icon color
+//console.log(list[0]);
+
+let lis = Array.from(list); // without this method getElementsByClassName & getElementsByTagName will not execute in forEach loop.
+
+lis.forEach(function(item, i){
+    console.log(item, i);
+})
+
+
+3. //document.querySelectorAll()
+//id => #
+//class => .
+
+let list = document.querySelectorAll('.sample-class'); //access multiple class
+list[0].style.background = 'red'; 
+list = document.querySelectorAll('li'); //access all li tag
+list = document.querySelectorAll('ol li'); //access all li from ol
+
+list.forEach(function(item){
+    //console.log(item);
+})
+
+let liOdd = document.querySelectorAll('li:nth-child(odd)'); //accessing odd li
+liOdd.forEach(function(item){
+    item.style.background = 'red';
+    item.style.color = 'white';
+});
+
+let liEven = document.querySelectorAll('li:nth-child(even)'); //accessing even li
+liEven.forEach(function(item){
+    item.style.background = 'gray';
+    item.style.color = 'blue';
+})
+
+console.log(list);
+
+
+---Class 53 Traversing---
+
+1. //Traversing
+
+let val;
+
+let list = document.querySelector('ul'); //accessing ul tag
+let listItem = document.querySelector('ul li:last-child');
+val = list;
+val = listItem;
+
+//Get childnodes
+
+val = list;
+val = list.childNodes; //accessing all childnodes of ul tag and get the value by array, here in array we will also get text array for enter key of all ul li tag
+val = list.childNodes[0]; //accessing the array by index number in ul li
+val = list.childNodes[1];
+val = list.childNodes[3];
+
+val = list.childNodes[0].nodeName; //accessing nodename of the array
+val = list.childNodes[1].nodeType;
+
+
+//Below are output of nodeType of childNodes
+// 1 Element
+// 2 Attribute
+// 3 Text
+// 8 Comment
+// 9 Document Itself
+// 10 Doctype
+
+
+val = list;
+val = list.children; //accessing ul child tag without text array of above childNodes
+val = list.children[0]; //accessing the child tag by index number
+val = list.children[0].textContent = 'Hello World'; //change the text of 0 index child tag
+val = list.children[1].children[0]; //accessing childrens of children
+val = list.children[1].children[0].href; //accessing attribute
+
+val = list.firstChild; //accesing first child of the array with text array
+val = list.firstElementChild; //accesing first child without text array
+val = list.lastChild; //accesing last child of the array with text array
+val = list.lastElementChild; //accessing last child of the array without text array
+
+val = list.childElementCount; //count the child element of ul
+
+val = listItem;
+val = listItem.parentElement; //accessing parent node of the child node
+val = listItem.parentNode; //accessing parent node of the child node
+val = listItem.parentNode.parentNode; //access parent node of parent node
+
+
+let listItem2 = document.querySelector('ul li:first-child');
+val = listItem2;
+
+val = listItem2.nextSibling; //accessing the next sibling of the first child with text array
+val = listItem2.nextElementSibling; //accessing the next sibling of the fist child without text array
+val = listItem2.nextSibling.nextSibling; //accessing the next sibling of next sibling of first child with text array
+val = listItem2.nextElementSibling.nextElementSibling; //accessing the next sibling element of next sibling element of first child without text array 
+
+val = document.querySelector('ul li:last-child');
+
+val = val.previousSibling; //access previous sibling of last child with text array
+val = val.previousElementSibling; //access previous sibling of last child without text array
+val = val.previousElementSibling.previousElementSibling; //accessing previous of previous element sibling
+
+console.log(val);
+
+
+
+---Class 54 Add Replace and Remove Element---
+
+
+1. Add new li tag into ol tag
+
+//createElement()
+
+let olItem = document.createElement('li'); //create new element
+olItem.className = 'myClass shaon'; //create class
+olItem.id = 'myId'; //create ID
+
+
+//Add attribute
+
+olItem.setAttribute('title', 'this is title');
+
+//Add content
+
+olItem.appendChild(document.createTextNode('React')); //create text node 
+
+document.querySelector('ol').appendChild(olItem); //Add extra element in ol tag
+
+console.log(olItem);
+
+
+2. //Add new li element in ul tag
+
+let ulItem = document.createElement('li'); //create element li tag
+let link = document.createElement('a'); //create element a tag
+
+link.appendChild(document.createTextNode('Instagram')); //create text node in a tag
+link.setAttribute('href', 'http://www.instagram.com'); //create href attribute in a tag
+
+ulItem.appendChild(link); //add a tag into li tag
+
+document.querySelector('ul').appendChild(ulItem); //add new li tag into ul tag
+console.log(ulItem);
+//console.log(link);
+
+
+
+3. //Replace Element
+
+let newHeading = document.createElement('h1'); //create new element h1
+newHeading.appendChild(document.createTextNode('This is Heading one')); //create new text node
+newHeading.className = 'simple-class'; //create new class for h1
+
+let oldHeading = document.querySelector('h3'); // select old element h3
+
+let parentDiv = document.querySelector('.container'); //select the parent element class
+
+parentDiv.replaceChild(newHeading, oldHeading); //replace in parent element by two parameter
+
+console.log(newHeading);
+console.log(oldHeading);
+console.log(parentDiv);
+
+
+
+---Class 55 Add Replace and Remove Element Part 2---
+
+1. //Remove Element
+
+let listItem = document.querySelectorAll('li');
+listItem[1].remove(); // remvoe element by array index number
+
+console.log(listItem);
+
+
+2. Remove element li by array index from ul tag 
+
+let ulList = document.querySelector('ul');
+let ulListItem = document.querySelectorAll('li');
+
+ulList.removeChild(ulListItem[7]);
+ulList.classList.add('test');
+ulList.classList.add('new-class');
+ulList.classList.remove('sample-class');
+ulList.setAttribute('title', 'this is my title')
+
+
+console.log(ulList);
+
+//let check = ulList.hasAttribute('title');
+//console.log(check);
+
+
+
+
+---Class 56 JavaScript DOM Event---
+
+1. We can create DOM Event in HTML button tag such as onclick and onmouseover event in button tag then we will get the output. For onclick and alert function we will get alert function after click and for onmouseover event we will get alert function when the mouse is on the button. 
+
+Example:
+
+<div class="container">
+    
+    <button onclick = "alert('Hello World')">Click Me</button>
+
+    <button onmouseover="alert('Welcome !')">Click Again</button>
+
+</div>
+
+
+2. Now, we will use DOM Event from external JS file. Now, we declare a button tag in an ID. Then go to external JS file and use document.getElementById('Id').addEventListener('EventName', functionName);
+
+Note: In HTML tag inline event we should add on before the event name but in external js file we have to remove the on in the event name
+
+Example: 
+
+document.getElementById('sample-btn').addEventListener('click', message); //In addEventListener first parameter is Event Name and second parameter is function name
+
+function message(){//this function accept only one parameter by default
+    console.log('button click');
+}
+
+
+3. Work with the DOM Event Function and it's parameter. 
+
+document.getElementById('sample-btn').addEventListener('click', message); //In addEventListener first parameter is Event Name and second parameter is function name
+
+
+function message(e){
+    let val = e;
+    val = e.target; //show the whole button tag
+    val = e.target.id; //show the id in button tag
+    val = e.timeStamp; //show the time of one clicking to another
+    val = e.type; //which type of event
+    val = e.clientY; //value increase from up to down that means according to Y axes
+    val = e.clientX; //value increase from left to right accroding to X axes
+    
+    console.log(val);
+}
+
+
+4. Working with offsetX and offsetY
+
+document.querySelector('.container').addEventListener('click', test);
+document.querySelector('.container').style.background = 'red';
+
+function test(e){
+    let val = e;
+    val = e.offsetY; // work as like as clientY increase value from top to bottom
+    val = e.offsetX; //work as like as client X increase value from left to right
+    this.style.background = `#${e.offsetX}`; //changing the color after clicking
+    console.log(val);
+}
+
+
+
+
+---Part 57 JavaScript More On Events---
+
+1. 
+
+<div class="container">
+    
+    <form>
+        <input type="text" id="name">
+    </form>
+
+    <p id="demo">This input is empty !</p>
+</div>
+
+    
+//In main.js File
+
+//More On Events
+
+document.querySelector('#name').addEventListener('focus', test); //focus in the input box
+document.querySelector('#name').addEventListener('keyup', test2); //showing the keyup text by adding each input
+
+function test(){
+    this.style.background = 'pink'; //after clicking input box background color
+}
+
+function test2(){
+    //console.log(this.value); //showing console by adding the each press of the keyboard
+    document.getElementById('demo').innerText = this.value; //showing the inputted value instead of P tag value
+}
+
+
+
+---Class 58 Error Handling---
+
+1. If we define a function without anything then it will provide error.
+So, for solving the error we can use try, catch and finally method.
+
+
+console.log('Before Error')
+
+
+try{
+    test(); //error code are here
+}catch(err){ //there are one parameter
+ console.log(err);// it shows reference error
+}
+
+
+console.log('After Error')
+
+
+2. 
+
+console.log('Before Error')
+
+
+try{
+    //test(); //error code are here
+    //undefined.test(); // it shows type error
+}catch(err){ //there are one parameter
+ //console.log(err);// it shows reference error
+ console.log(err.message); // using message property we will see only test function is not defined
+ console.log(err.name) //using name property we can able to see the type of error
+}finally{ // by finally method whether it is error or not it will run the code
+    console.log('I am inside finally')
+}
+
+
+
+console.log('After Error')
+
+
+3. //throw method --> custom message
+
+let a = 25;
+
+try{
+    if(a > 11) throw ('Too Big')
+    else if (a < 2) throw ('Too Small')
+}catch(err){
+    console.log(err);
+}
+
+
+
+---Part 59 Regular Expression---
+
+
+1. //Regular Expression
+//Pattern Matching Technique
+
+let re;
+re = /hello/; // by / / it is indicates regular expression
+
+re = /Hello/; // now it is match with the string and shows an array because of case sensitivity
+
+re = /hello/i; // now, it will also match with the string because of using i after regular expression, so for removing case sensitivity we can use i after slash sign
+
+console.log(re); //it will show hello with slash sign
+
+console.log(re.source)//by source property it will remove the slash sign in regular expression
+
+
+let str;
+str = 'Hello World';
+
+str = 'Again Hello World'; //now it will match with regular expression in index number 6
+
+str = 'ssdfshellosdfsdfsd';//here, it will also match with regular expression for random string
+
+str = 'Again Hello World and Again Hello World'; // here, it will also match only the first hello and don't count the second one
+
+str = 'World'; //it is not matching so result will be null
+
+let result = re.exec(str); // by exec method it will match with the regular expression and string and it will show an array if match with the string and shows null for not matching
+
+console.log(result);
+//console.log(str);
+
+
+
+2. test() returns true or false if match and unmatch
+
+let re;
+re = /hello/; // by / / it is indicates regular expression
+re = /Hello/; // now it is match with the string and shows an array because of case sensitivity
+re = /hello/i; // now, it will also match with the string because of using i after regular expression, so for removing case sensitivity we can use i after slash sign
+
+console.log(re); //it will show hello with slash sign
+
+console.log(re.source)//by source property it will remove the slash sign in regular expression
+
+
+let str;
+str = 'Hello World';
+str = 'Again Hello World'; 
+str = 'ssdfshellosdfsdfsd';
+str = 'Again Hello World and Again Hello World'; 
+let result = re.test(str); //test() returns true or false for matching and mismatching
+
+console.log(result);
+
+
+3. match() returns an array or null as like as exec() function but it needs to change the declaration. We need to use string variable first then in function's parameter use regular expression variable.
+
+
+let re;
+re = /hello/; // by / / it is indicates regular expression
+
+re = /Hello/; // now it is match with the string and shows an array because of case sensitivity
+
+re = /hello/i; // now, it will also match with the string because of using i after regular expression, so for removing case sensitivity we can use i after slash sign
+
+console.log(re); //it will show hello with slash sign
+
+console.log(re.source)//by source property it will remove the slash sign in regular expression
+
+
+let str;
+str = 'Hello World';
+str = 'Again Hello World'; 
+str = 'ssdfshellosdfsdfsd';
+str = 'Again Hello World and Again Hello World'; 
+let result = str.match(re); //match() returns an array or null as like as exec() function. But have to change the declaration such as need to use string variable first then in parameter use regular expression variable.
+
+console.log(result);
+
+
+4. search() returns index number or -1 for match and mismatch. variable declaration same as match() that means at first take string variable then in parameter take regular expression variable
+
+
+let re;
+re = /hello/; // by / / it is indicates regular expression
+
+re = /Hello/; // now it is match with the string and shows an array because of case sensitivity
+
+re = /hello/i; // now, it will also match with the string because of using i after regular expression, so for removing case sensitivity we can use i after slash sign
+
+console.log(re); //it will show hello with slash sign
+
+console.log(re.source)//by source property it will remove the slash sign in regular expression
+
+
+let str;
+str = 'Hello World';
+str = 'Again Hello World'; 
+str = 'ssdfshellosdfsdfsd';
+str = 'Again Hello World and Again Hello World'; 
+let result = str.search(re); // retruns index number or -1 for match and mismatch
+
+console.log(result);
+
+
+
+5. //replace() we can replace regular expression's matching value by this function
+
+let re;
+re = /hello/i; 
+
+console.log(re); //it will show hello with slash sign
+
+console.log(re.source)//by source property it will remove the slash sign in regular expression
+
+
+let str;
+str = 'Hello World';
+let result = str.replace(re, 'Hi'); //it will replace the matching value with regular expression. One parameter is regular expression variable and another one is replacing value
+
+console.log(result);
+
+
+
+---Part 60 Character Set Using Brackets []---
+
+
+1. //Regular Expression
+//Character Set Using Brackets []
+
+let re;
+re = /h[eai]llo/; //should have contain one character in string value in this Regular Expression 
+re = /[HA]ello/i; //should have contain one or multiple character in string value for matching
+re = /[^ha]ello/; //if this square value exist in string position then it will mismatch and if not exist then it will match.
+re = /^[he]ello/; //if this square value exist in string position then it will match otherwise mismatch
+re = /[a-z]ello/;//start with small letter and string value also should be start with small letter
+re = /[A-Z]ello/;//start with capital letter and string value also should be start with capital letter
+re = /[A-j]ello/i; //remove case sensitivity now the string value can be any letter
+re = /^[a-z]ello/;//string value must be start with small letter
+re = /^[A-Z]ello/;//string value must be start with capital letter
+re = /[A-Za-z]ello/;//small and capital letter are together and any character can be match
+re = /[0-9]ello/; 
+re = /^[0-9]/;//must be start with number
+re = /[^0-9]hello/;//for matching can't use 0-9 value in string
+re = /^[0-9][0-9][0-9]hello/; //must start with three digit for matching
+
+
+
+let str;
+str = "885hello";
+
+console.log(re.exec(str));
+
+reTest(re, str)
+function reTest(re, str){
+    if(re.test(str)){
+        console.log(`'${str}' Matches '${re.source}'`);
+    }else{
+        console.log(`'${str}' Don't Match '${re.source}'`);
+    }
+} 
+
+
+
+
+---Part 62 Regular Expression Quantifier and Grouping---
+
+
+1. //Regular Expression
+//Quantifier and Grouping
+
+let re;
+re = /h[eai]llo/; //should have contain one character in string value in this Regular Expression 
+re = /[HA]ello/i; //should have contain one or multiple character in string value for matching
+re = /[^ha]ello/; //if this square value exist in string position then it will mismatch and if not exist then it will match.
+re = /^[he]ello/; //if this square value exist in string position then it will match otherwise mismatch
+re = /[a-z]ello/;//start with small letter and string value also should be start with small letter
+re = /[A-Z]ello/;//start with capital letter and string value also should be start with capital letter
+re = /[A-j]ello/i; //remove case sensitivity now the string value can be any letter
+re = /^[a-z]ello/;//string value must be start with small letter
+re = /^[A-Z]ello/;//string value must be start with capital letter
+re = /[A-Za-z]ello/;//small and capital letter are together and any character can be match
+re = /[0-9]ello/; 
+re = /^[0-9]/;//must be start with number
+re = /[^0-9]hello/;//for matching can't use 0-9 value in string
+re = /^[0-9][0-9][0-9]hello/; //must start with three digit for matching
+
+
+
+//Braces {} - Quantifier
+
+re = /sha{3}on/; //By curley braces we can define quantifier value assign for how much character we need to match
+re = /hel{2,5}o/; //here we can take quantifier value 2 times or 5 times together
+re = /hel{2,}o/;//start from 2 and take as much as I can in the string value
+
+
+
+//Parenthesis () ------ Grouping
+
+re = /^([0-9]){5}/ //here, should be start with 5 number value in string
+
+//Bangladeshi Phone Number Matching
+
+re = /^01([0-9]){9}$/ //here must number must be start with 01 and then must have 9 number and end it by assigning $ sign. That means no number can be used after 9 number by indication $ sign
+
+re = /^\+8801([0-9]){9}$/ //here, we are using internation number pattern where need to use +880 after ^ sign using + sign can't be use it will show uncaught error so we need to use \ sign for using + sign and others conditions are done as before
+
+re = /^([0-9]x){3}/ //here, must start with the number and then should have x for 3 times
+
+
+
+let str;
+str = "+8801823578649";
+str = "2x3x4x"
+
+console.log(re.exec(str));
+
+reTest(re, str)
+function reTest(re, str){
+    if(re.test(str)){
+        console.log(`'${str}' Matches '${re.source}'`);
+    }else{
+        console.log(`'${str}' Don't Match '${re.source}'`);
+    }
+} 
+
+
+
+
+---Part 63 Shorhand Characters and Assertions---
+
+1. //Shorhand Characters and Assertions
+
+let re;
+re = /\w/; //Word character can define by this and also matches with Alpha numberic or _ . It is matches by index number of the string value only for first one.
+re = /\w+/; //word character matches with multiple value
+re = /\W/; //non word character that means only matching with non word characters for only one match
+re = /\W+/; //non word character for multiple value matchign in string value
+re = /\d/;//only digit will match with the string
+re = /\d+/;// get mulitple matching number
+re = /\D/;//non number character
+re = /\s/; //only white space.. it is match in the space of a string value
+re = /\bHello\b/;//word boundary..only space can given for this word nothing can be added in string for matching
+
+
+let str;
+str = "+01823578649";//the matching will start from index number 1 because it is start from the number and + sign is taken by word character
+str = "(&*^klkjlk";//It will take only one matches
+str = "(&*^klkkjkjk";//word character matches with multiple value
+str = "(&*kk"; //matching with non word character 
+str = "sdfs*(^*sdfdf*df"; //matching with non word multiple 
+str = "3424sdsf";//matching with digit
+str = "adfsfsd4545fd";//matching with multiple digits
+str = "3434"; //non digit number
+str = " Hello "; //works in whitespace
+
+
+
+console.log(re.exec(str));
+
+reTest(re, str)
+function reTest(re, str){
+    if(re.test(str)){
+        console.log(`'${str}' Matches '${re.source}'`);
+    }else{
+        console.log(`'${str}' Don't Match '${re.source}'`);
+    }
+} 
+
+
+
+---Part 64 Assertions---
+
+1. //Regular Expression
+// Assertions
+
+let re;
+re = /x(?=y)/ // here, for y there should have x before y for matching this condition of assertions
+re = /x(?=yz)/ //here, yz together and x should have before yz for matching with string
+re = /x(?!=y)/ //for this condition matching with string there should have x then other character then y should exist then it will match
+
+
+let str;
+str = "wererxy";
+str = "wererxyz";
+str = "wererxty";
+
+
+
+console.log(re.exec(str));
+
+reTest(re, str)
+function reTest(re, str){
+    if(re.test(str)){
+        console.log(`'${str}' Matches '${re.source}'`);
+    }else{
+        console.log(`'${str}' Don't Match '${re.source}'`);
+    }
+} 
+
+
+
+---Part 65 Regular Expression Last Part---
+
+1. //Regular Expression
+
+let re;
+//Postal Code - 4000
+re = /^[0-9]{4}$/ //must be start with digit and should have 4 digit and end with digit
+
+//Phone Number 
+//01823578649, +8801823578649, 8801823578649
+
+re = /^01[0-9]{9}$/
+
+re = /^\+8801[0-9]{9}$/
+
+re = /^(\+88)?01[0-9]{9}$/ //for using +88 optional use first parenthesis and ? sign
+
+re = /^(\+)?(88)?01[0-9]{9}$/ //for using + sign and 88 optional individually
+
+//Email Address
+//shaonn88.learn@gmail.com
+
+re = /^([a-zA-Z0-9]\.?)+([a-zA-Z0-9])+@([a-zA-Z0-9]\.?)+[^\.]$/
+
+re = /^([a-zA-Z0-9])+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/
+
+
+
+
+let str;
+str = "4545";
+str = "01823578649";
+str = "01823578649";
+str = "shaonn88.learn@gmail.com";
+str = "shaon@gmail.com";
+
+
+
+console.log(re.test(str));
+
+reTest(re, str)
+function reTest(re, str){
+    if(re.test(str)){
+        console.log(`'${str}' Matches '${re.source}'`);
+    }else{
+        console.log(`'${str}' Don't Match '${re.source}'`);
+    }
+} 
+
+
+
+
+JSON(JavaScript Object Notation)
+--------------------------------
+
+
+---Part 67 JSON Syntax---
+
+1. //JSON Syntax
+
+
+//JS Object Format
+
+var student = {
+    name : "Shaon",
+    age : 25,
+    HomeTown : "Feni"
+}
+
+/*
+//JSON Format
+
+var student_JSON = {
+    "name" : "Shaon",
+    "age" : 26,
+    "HomeTown" : "Feni"
+}
+*/
+
+//Convert JS Object to JSON
+
+var student_JSON = JSON.stringify(student); //convert JS Object to JSON by stringify method
+console.log(student_JSON);
+
+
+var student_new = JSON.parse(student_JSON); //Convert JSON to JS Object
+console.log(student_new);
+
+
+
+---Part 68 JSON Data Types---
+
+1. //JSON Data Types
+
+//http://jsonlint.com
+//JSON Supported Data Type
+//string 
+//number
+//object (JSON Object)
+//array
+//boolean
+//null
+
+//Json doesn't support date, undefined and function data type
+
+var person = {
+    name : "Shaon",
+    age : 26,
+    homeTown : "Feni",
+    date : 1993-05-23, //nt supported data type in JSON
+    married : false,
+    test_null : null,
+    test_undefined : undefined, //not supported data type in JSON
+    greet : function(){ //not supported function in JSON
+        console.log(`Hello ${this.name}`);
+    } 
+};
+
+var person_json = JSON.stringify(person);
+console.log(person_json);
+
+//Note: We can check the validation of JSON data in jsonlint.com site
+
+
+
+2. //JSON - Warning
+
+//JSON.Stringyfy() ---> JS object to JSON string
+//JSON.Parse() ---> JSON string to JS Object
+
+//JSON format
+var person1 = {
+    "name" : "Shaon",
+    "age" : 26,
+    "homeTown" : "Feni", 
+    "married" : false
+}
+//Note: We can't use JSON by hard coding in JS. Because by default JS take it as object so we caught an error if we want to hard coding JSON string into JS object.
+
+var person_json = JSON.stringify(person1); //convert JS object to JSON though the values are in JSON format it works as object in JS so we can convert it into JSON. Now we can convert it from JSON to JS Object
+
+var person_obj = JSON.parse(person_json); //Convert JSON to JS object
+
+console.log(person_json);
+
+//JS object format
+var person1 = {
+    name : "Shaon",
+    age : 26,
+    homeTown : "Feni", 
+    married : false
+}
+
+console.log(person1); //JS object value shows
+
+
+
+---Part 70 JSON Object and Array---
+
+1. //JSON Object and Array
+
+//Ajax Code to access JSON page data
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        //console.log(this.responseText) //get json data from data.json page
+        var data = this.responseText;
+        //console.log(data); //get json data by assigning variable data
+        jsonData(data);
+    }
+};
+xmlhttp.open("GET", "data.json", true);
+xmlhttp.send();
+
+
+function jsonData(json_obj){
+    //console.log(json_obj);
+    var js_obj = JSON.parse(json_obj);
+    //console.log(js_obj);
+    for(x in js_obj.person){
+        var persons = js_obj.person;
+        //console.log(persons[x]); //access all data of js_obj
+        for(y in persons[x]){
+            console.log(persons[x][y]); //access all data individually
+        }
+    }
+}
+
+
+
+
+---Part 71 AJAX Asynchronous Programming and XML---
+
+1. here, html page for getting AJAX data from data.txt file
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/> 
+    <title>Welcome To AJAX</title>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Using AJAX Get Data</h2>
+    <button id="getData">Click Me</button>
+    <div id="getAjaxData"></div> <!--take this div for get ajax data from data.txt file -->
+</div>   
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+---Ajax code in main.js file for getting data from data.txt file
+
+//Asychronous Programming
+//AJAX - Asynchronous Programming and XML
+//Get data without loading the page
+
+
+document.getElementById('getData').addEventListener('click', loadData);
+
+function loadData(){
+   //creat XHR Object (XML HTTP Request)
+   let xhr = new XMLHttpRequest();
+   xhr.open('GET', 'data.txt', true);
+
+   //HTTP Status
+   //200 : "OK"
+   //403 : "Forbidden"
+   //404 : "Not Found"
+
+   xhr.onload = function(){
+       if (this.status === 200){
+            document.getElementById('getAjaxData').innerHTML = `<h3>${this.responseText}</h3>` 
+       }    
+   }
+   xhr.send(); //without this method of xhr object xhr.onload function will not work
+   //console.log(xhr);
+}
+
+
+
+2. There are another old process to get data by Ajax.
+
+document.getElementById('getData').addEventListener('click', loadData);
+
+function loadData(){
+   //creat XHR Object (XML HTTP Request)
+   let xhr = new XMLHttpRequest();
+   xhr.open('GET', 'data.txt', true);
+
+   //HTTP Status
+   //200 : "OK"
+   //403 : "Forbidden"
+   //404 : "Not Found"
+
+
+   //Ready State
+   //0 : request not initialized
+   //1 : server connection established
+   //2 : request recieved
+   //3 : processing request
+   //4 : request finished and response is ready
+
+
+   xhr.onreadystatechange = function(){
+       if(this.status === 200 && this.readyState === 4){ 
+           document.getElementById('getAjaxData').innerHTML = `<h3>${this.responseText}</h3>`
+       }
+   }
+   xhr.send();
+  //console.log(xhr);
+}
+
+
+
+3. //For readyState 3 -->processing request. This state is needed for showing the loading state to the user so that user can understand that the page is loading that means it is under request. for this we can use onprogress property
+
+
+document.getElementById('getData').addEventListener('click', loadData);
+
+function loadData(){
+   //creat XHR Object (XML HTTP Request)
+   let xhr = new XMLHttpRequest();
+   xhr.open('GET', 'data.txt', true);
+
+   //HTTP Status
+   //200 : "OK"
+   //403 : "Forbidden"
+   //404 : "Not Found"
+
+
+   //Ready State
+   //0 : request not initialized
+   //1 : server connection established
+   //2 : request recieved
+   //3 : processing request
+   //4 : request finished and response is ready
+
+
+   xhr.onprogress = function(){ //checking on progress of the readState
+       console.log(this.readyState); //output should be 3 for indicating on progress ready state
+   }
+   
+   
+   xhr.send();
+  console.log(xhr);
+}
+
+
+
+---Part 72 AJAX Data From External Server icndb.com---
+
+1. HTML structure for getting data from external server icndb.com
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/> 
+    <title>Welcome To AJAX</title>
+</head>
+<body>
+
+
+<div class="container">
+    <h2>Get Jokes From External Server icndb.com</h2>
+    <input type="text" id="numberJokes">
+    <button id="getData">Click Me For External Server Data</button>
+    <div id="getAjaxData"></div> <!--take this div for get ajax data from data.txt file -->
+</div>   
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+---AJAX Code to get the data from external server icndb.com---
+
+//Get AJAX Data From External Server icndb.com
+//API
+//RESTFUL API
+
+document.getElementById('getData').addEventListener('click', loadJokes);
+
+function loadJokes(){
+
+    let number = document.getElementById('numberJokes').value; //this will work for to get the value by input box input number
+
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true); //put number variable to get the input value number
+
+    xhr.onload = function(){
+        if(this.status === 200){
+            let data = JSON.parse(this.responseText);
+            let jokes = data.value.joke; //
+            console.log(data);
+        }
+    }
+    xhr.send();
+}
+
+
+---Part 73 AJAX Data From External Server icndb.com Part 2---
+
+
+
+//Get AJAX Data From External Server icndb.com
+//API
+//RESTFUL API
+
+document.getElementById('getData').addEventListener('click', loadJokes);
+
+function loadJokes(){
+
+    let number = document.getElementById('numberJokes').value; //this will work for to get the value by input box input number
+
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true); //put number variable to get the input value number
+
+
+    xhr.onprogress = function(){ //this onprogress function shows the loading data to the user and it should be use before onload
+        document.getElementById('getAjaxData').innerHTML = '<h2>Loading...</h2>' 
+    }
+
+
+    xhr.onload = function(){
+        if(this.status === 200){
+
+            let data = JSON.parse(this.responseText); //convert JSON to object
+
+            let jokes = data.value; //getting data with jokes value
+
+            let output = "<ol>"
+
+            jokes.forEach(function(item){
+                output += `<li>${item.joke}</li>`
+            })
+               
+            output += "</ol>"
+
+            document.getElementById('getAjaxData').innerHTML = output; //get jokes data from external server in html page
+
+            //console.log(output);
+            //console.log(jokes);
+        }
+    }
+    xhr.send();
+}
+
+
+
+---Part 74 Call Back Function---
+
+1. HTML Code--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/> 
+    <title>Welcome To Call Back Function</title>
+</head>
+<body>
+
+
+    <div class="container" id="getPersonsData">
+
+    </div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+
+---JS Code--
+
+//Call Back Function
+
+
+/*
+setTimeout(function(){
+    console.log('Hello World');
+
+}, 4000)
+*/
+
+
+let persons = [
+    {firstName: 'Ataur', lastName: 'Rahman'},
+    {firstName: 'Rahi', lastName: 'Raihan'}
+]
+
+
+function createPerson(person, callBack){
+    setTimeout(function(){
+    persons.push(person);
+    callBack();    
+    }, 2000)
+}
+
+
+function getData(){
+    setTimeout(function(){
+        let output = '';
+        persons.forEach(function(item){
+            output += `<li>${item.firstName} ${item.lastName}</li>`;
+        });
+        document.getElementById('getPersonsData').innerHTML = output;
+    }, 500)
+}
+
+createPerson({firstName: 'Moshiur', lastName: 'Rahman'}, getData);
+
+
+
+---Part 75 Promises---
+
+1. HTML Code---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/> 
+    <title>Welcome To Call Back Function</title>
+</head>
+<body>
+
+
+    <div class="container" id="getPersonsData">
+
+    </div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+
+--JS Code--
+
+let persons = [
+    {firstName: 'Ataur', lastName: 'Rahman'},
+    {firstName: 'Rahi', lastName: 'Raihan'}
+]
+
+
+function createPerson(person){
+    
+    
+    let prom = new Promise(function(resolve, reject){ //by default promise function has two parameter resolve() & reject() then need to call resolve() function and at last return the object function
+        persons.push(person);
+        resolve();
+    })
+    return prom;
+}
+
+
+function getData(){
+    setTimeout(function(){
+        let output = '';
+        persons.forEach(function(item){
+            output += `<li>${item.firstName} ${item.lastName}</li>`;
+        });
+        document.getElementById('getPersonsData').innerHTML = output;
+    }, 500)
+}
+
+createPerson({firstName: 'Moshiur', lastName: 'Rahman'}).then(getData); //here use then function and assign getData() function.. 
+
+
+
+2. //Work for Promises reject function. If any error occured or from server any how not get the data then for showing error this function will work.
+
+let persons = [
+    {firstName: 'Ataur', lastName: 'Rahman'},
+    {firstName: 'Rahi', lastName: 'Raihan'}
+]
+
+
+function createPerson(person){
+    
+    
+    let prom = new Promise(function(resolve, reject){ //by default promise function has two parameter resolve() & reject() then need to call resolve() function and at last return the object function
+        persons.push(person);
+
+        let err = true;
+        if(!err){
+            resolve();
+        }
+        else{
+            reject('Data Error: Something Wrong!')
+        }
+
+        resolve();
+    })
+    return prom;
+}
+
+
+function getData(){
+    setTimeout(function(){
+        let output = '';
+        persons.forEach(function(item){
+            output += `<li>${item.firstName} ${item.lastName}</li>`;
+        });
+        document.getElementById('getPersonsData').innerHTML = output;
+    }, 500)
+}
+
+createPerson({firstName: 'Moshiur', lastName: 'Rahman'}).then(getData)
+.catch(function(err){ //to show error nicely
+    console.log(err);
+}); //here use then function and assign getData() function.. 
+
+
+
+
+---Part 76 Fetch API---
+
+1. HTML Code---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/> 
+    <title>Welcome To Fetch API</title>
+</head>
+<body>
+
+
+    <div class="container">
+        <button id="getAPIData">Get Data</button>
+    </div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+---JS Code---
+
+//Fetch API
+
+document.getElementById('getAPIData').addEventListener('click', APIData);
+
+function APIData(){
+    fetch('http://api.icndb.com/jokes/random')
+    .then(function(res){ //it works by promise wise
+        return res.json(); //response json data. And here it works by text and json() data
+    })
+    .then(function(data){
+        console.log(data); //response data as like as AJAX
+    })
+    .catch(function(err){ //error data
+
+        console.log(err);
+    })
+}
+
+
+
+2. //fetch API with Arrow Function
+
+//let test = para1 => res.json();
+
+function APIData(){
+    fetch('http://api.icndb.com/jokes/random')
+
+    .then(res => res.json()) //response json data
+
+    .then(data => {console.log(data)}) // 
+
+    .catch(err => {console.log(err)})//error data
+}
+
+
+
+
+
+------------ES6-------------------
+==================================
+
+---Part 92 Global Scope and Local Scope---
+
+1. //ES6
+//var and let, const(ES6) 
+//Scope
+
+//Global Scope and Local Scope
+
+/*
+var a = 6;
+a = a +10; // reassign of the variable
+
+var a = "Shaon"; // redeclare of the same variable
+console.log(a);
+
+//Note: By var we can reassign the variable and also redeclare many times.
+
+let b = 6;
+b = b + 10;
+
+// let b; // not redeclarable by let
+console.log(b);
+
+//Note: By let we can reassign the variable but not redeclare the variable by let.
+
+
+const c = 7;
+// c = c * 8; // can't reassign by const
+
+console.log(c);
+*/
+
+
+//Global scope
+
+var a = 1;
+let b = 2;
+const c = 3;
+var d = 10;
+
+console.log(`Global Scope:`, a, b, c);
+
+
+//Local Scope
+
+function test(){
+    var a = 4;
+    let b = 5;
+    const c = 6;
+    console.log(`Function Scope:`, a, b, c, d); //accessing global scope by the variable d
+}
+test();
+console.log(`Global Scope:`, a, b, c);
+
+if(true){
+    var a = 7;
+    let b = 8;
+    const c = 9;
+    console.log(`If Scope:`, a, b, c);
+}
+
+console.log(`Global Scope:`, a, b, c); // only a value has been changed because of using var.
+
+
+for(var a = 0; a < 10; a++){
+    console.log(`Loop Scope:`, a);
+}
+
+console.log(`Global Scope:`, a, b, c); // only a value has been changed because of using var if we use let then the value will not change.
+
+
+
+
+---Part 93 Arrow Function and Call Back Function---
+
+1. //Define a Function
+
+/*
+function hello(){
+    console.log("Hello World");
+}
+hello();
+*/
+
+//Arrow Function
+//Arrow function can be store in a variable
+//For single parameter no need to use first parenthesis
+//No need to use curley braces for single line array function body
+
+
+/*
+//let hello = (name) => {console.log(name)};
+
+let hello = name => console.log(name);
+hello('Shaon');
+*/
+
+
+/*
+function getSquare(number){
+    return number * number;
+}
+
+console.log(getSquare(4));
+*/
+
+
+//Arrow Function
+
+/*
+let getSquare = (number) => {return number * number};
+
+console.log(getSquare(4));
+*/
+
+/*
+let getSquare = number => console.log(number * number); // no need to write return in arrow function
+
+getSquare(4);
+*/
+
+
+
+//Callback Function
+//In one function calling another function is callback function
+//Here, forEach is a function where we are calling another function thats why it is callback function
+
+//numbers = [1,2,3,4,5];
+
+/*
+numbers.forEach(function(item){ //function expression
+    console.log(item);
+});
+*/
+
+/*
+let printAll = function(item){
+    console.log(item);
+}
+numbers.forEach(printAll); //using variable of the function expression
+*/
+
+/*
+let printAll = item => console.log(item);
+
+numbers.forEach(printAll); //using arrow function variable
+*/
+
+
+//numbers.forEach(item => console.log(item)); //arrow function in single line
+
+
+
+//Mapping --> Creating New Array by map function
+
+/*
+numbers = [1, 2, 3, 4, 5, 6];
+
+function squareAll(item){
+    return item * item;
+}
+
+let squareNum = numbers.map(squareAll);
+console.log(squareNum);
+*/
+
+
+//Mapping with Arrow Function
+
+numbers = [1, 2, 3, 4, 5, 6];
+
+let squareNum = numbers.map(item => item * item);
+
+console.log(squareNum);
+
+
+
+---Part 94 Template Literals---
+
+1. //Template Literals (ES6)
+
+/*
+console.log('first line \nsecond line'); //using \n for moving into next line
+console.log('third line');
+
+//Template literals for next line
+console.log(`First line
+second line
+third line
+`)
+
+//Template literals using variable
+let a = (`First line 
+second line
+third line
+`)
+
+console.log(a);
+*/
+
+
+/*
+let age = 26;
+
+console.log('My age is:' + age);
+console.log(`My Age is ${age}`); //using template literals
+*/
+
+/*
+let myName = 'Shaon';
+let age = 25;
+let dob = '23rd March, 1993';
+
+console.log(`My Name is ${myName} 
+My age is ${age} 
+My Date of Birth is ${dob}`);
+*/
+
+
+let a = 40;
+let b = 60;
+
+console.log(`The result is ${a + b}`);
+console.log(`${a} + ${b} = ${a + b}`);
+
+
+
+---Part 95 Array Destructuring---
+
+1. //Array Destructuring
+
+let fruits = ['Apple', 'Grape', 'Orange'];
+
+/*
+//Old Way
+let fruit1 = fruits[0];
+let fruit2 = fruits[1];
+
+console.log(fruit1, fruit2);
+*/
+
+
+//Array Destructuring
+
+//let [fruit1, fruit2, fruit3] = fruits;
+let [fruit1, , fruit3] = fruits; //for skipping any array value use , sign between the variable
+
+console.log(fruit1, fruit3);
+
+
+
+---Part 96 Swap Variables---
+
+1. //Swap Variables
+
+let a = 8;
+let b = 20;
+
+//old way
+/*
+let temp = a;
+a = b;
+b = temp;
+*/
+
+//ES6 Swap Variables
+
+[a, b] = [b, a];
+
+console.log(`a = ${a} b = ${b}`);
+
+
+
+---Part 97 Object Destructuring---
+
+1. //Object Destructuring
+
+let person = {
+    firstName : 'Shaon',
+    lastName : 'Rahman',
+    dob : '25-03-1994'
+}
+
+/*
+//old way
+
+let fName = person.firstName,
+lName = person.lastName,
+dob = person.dob
+
+console.log(fName, lName, dob);
+*/
+
+
+//ES6 Object Destructuring
+
+/*
+let {firstName, lastName, dob} = person; //here, should keep the object key name
+console.log(firstName, lastName, dob);
+*/
+
+/*
+let {firstName : fName, lastName : lName, dob : myBdate} = person; //define variable name for object keys
+console.log(fName, lName, myBdate); //assigning the variable name
+*/
+
+
+//Object destructuring in function
+
+function displayResult({firstName : fName, lastName : lName, dob : myBdate}){
+    console.log(fName, lName, myBdate);
+}
+displayResult(person); 
+
+
+
+---Part 98 Spread Operator---
+
+1. //Spread Operator
+
+/*
+//Using spread operator on string
+let str = 'Bangladesh';
+let newStr = [...str];
+console.log(newStr);// get all the character individually in array
+*/
+
+
+/*
+//Spread operator on Array
+
+let fruit1 = ['Apple', 'PineApple', 'Guava'];
+let fruit2 = ['Orange', 'BlackBerry'];
+let newFruit = 'JackFruit';
+
+let newArr = [...fruit1, fruit2, newFruit];
+console.log(newArr); //get all array together by spread operator
+*/
+
+
+//Spread Operator on Object (ES8)
+
+let person = {
+    fName : 'Shaon',
+    lName : 'Rahman',
+}
+
+let newPerson = {...person, dob : '23-03-1994'}; //By spread operator also can add new property of an object
+console.log(newPerson);
+
+
+---Part 99 Spread Operator with Function---
+
+1. //Spread Operator with Function
+
+let numbers = [23, 1, 0, -1];
+console.log(Math.max(...numbers));//without spread operator it will show NaN output but because of using spread operator it will show output accurately
+
+
+let person = ['Shaon', 'Ataur'];
+
+let test = (fname, lname) => {
+    console.log(`Hello ${fname} ${lname}`);
+}
+
+test(...person); //it is easy to do by spread operator.. otherwise we did it before by taking the index number of the array.
+
+
+
+---Part 100 Rest Operator---
+
+1. //Rest Operator
+//Rest Operator opposite of spread operator
+
+/*
+let fruits = ['Apple', 'Mango', 'Banana', 'Pine-Apple'];
+let[first, second, ...third] = fruits; 
+
+console.log(first);
+console.log(second);
+console.log(third);//bind the last two array value together by rest operator
+*/
+
+
+/*
+//Rest Operator on Object
+
+let person = {
+    fName : 'Shaon',
+    lName : 'Ataur',
+    dob : '23-03-1993'
+}
+
+let {fName, ...lName} = person;
+console.log(fName);
+console.log(lName);//here, because of rest operator rest of the object property are shown 
+*/
+
+
+/*
+//Rest Operator on Function
+
+let test = (fName, age, ...num) => {
+    console.log(fName);
+    console.log(age);
+    console.log(num);
+}
+test('Shaon', 28, 50, 60, 70, 80);//here, for three parameter conceded 3 value but rest of the numbers are shown an array for the ... rest operator sign of the third parameter
+*/
+
+let moreNumber = [2, 3, 4, 5];
+
+let test = (fName, ...number) => {//in parameter if we use 3 dots then it is rest operator
+    console.log(fName);
+    console.log(number);
+}
+test('Shaon', 40, 50, 60, 70, 80);
+test('Shaon', ...moreNumber);// if we use 3 dots in arguement then it is spread operator
+
+
+
+---Part 101 Symbol---
+
+1. //Symbols
+
+/*
+let a = Symbol();
+let b = Symbol();
+
+console.log(a, b);
+console.log(a == b);//these are not equal result is false
+console.log(a === b);//type is not equal result is false
+*/
+
+
+/*
+//Symbol use in Object
+//Symbol can't be an object property
+
+let a = Symbol
+
+let person = {
+    name : 'Shaon',
+    age : '23', 
+    [a] : 'Hello World'
+
+}
+console.log(person); //Symbol can't be access. It only shows function of the Symbol
+console.log(Object.getOwnPropertyNames(person));//Symbol can't be access.It only show function of symbol
+console.log(Object.getOwnPropertySymbols(person)); //Symbol access function
+console.log(Object.keys(person));//Symbol can't be access here
+console.log(JSON.stringify(person));//Symbol can't be access here
+
+
+for(x in person){
+    console.log(x);
+}
+*/
+
+let sym1 = Symbol('Hello');//Using Symbol paramter and it is accessable
+let sym2 = Symbol('Hello');
+
+console.log(sym1);
+
+
+
+---Part 102 Iterator---
+
+1. //Iterator
+
+
+/*
+
+let iterable = 'Hello';
+iterable = [1,2,3,4,5];//Array iteration as like as 
+
+//Using Symbol.iterator()
+
+let itr = iterable[Symbol.iterator]();
+
+//console.log(itr)
+//Below console.log iterate the string one by one and at last show the done property true
+
+console.log(itr.next().value);// To show only value use value at last 
+console.log(itr.next());
+console.log(itr.next());
+
+console.log('Others Code...');// We can include anything before the finishing of the iteration
+
+console.log(itr.next());
+console.log(itr.next());
+console.log(itr.next());
+*/
+
+
+
+
+//Iterate in Array
+
+let names = ['Hasan', 'Shaon', 'Rahi', 'Ovi', 'Shakil'];
+
+//Creating custom iterator
+
+function customerIterator(arr){
+    let i = 0;
+
+    return {
+        next: function(){
+            return i < arr.length ? {value: arr[i++], done: false} : {done: false}
+        } 
+    }
+}
+
+let members = customerIterator(names);
+console.log(members.next().value);
+console.log(members.next().value);
+console.log(members.next().value);
+
+console.log('Otthers Code...')
+
+console.log(members.next().value);
+console.log(members.next().value);
+console.log(members.next().value);
+
+
+
+---Part 103 Generator---
+
+1. //Generator
+//Generator is working as like as Iterator
+//Generator has * sign after function
+//Please note that for below if the second generator is not console then the console. log value will not show in output that means at first need to console.log the generator then we can see other codes
+
+function* genFunction(){
+    console.log('Generator');
+    yield 1;
+    console.log('Generator');
+    console.log('Generator');
+    console.log('Generator');
+    yield 'Shaon';
+    yield 4;
+    yield 'Rahi';
+    yield 'Ovi';
+    yield 'Hello World';
+}
+
+let gnr = genFunction();
+
+console.log(gnr.next().value);
+console.log(gnr.next().value);
+
+
+
+
+---Part 104 Promises---
+
+1. //Promises
+
+//If promises successful --> resolve()
+//If promises failed --> reject()
+
+/*
+let prom = new Promise((resolve, reject) => {
+    let a = 1+1;
+
+    if(a == 2){
+        resolve('Success');
+    }else{
+        reject('Failed')
+    }
+});
+
+//.then .catch
+
+prom.then((message)=>{
+    console.log('I am from then' + message);
+}).catch((message) => {
+    console.log('I am from catch' + message);
+})
+
+
+console.log('I am from after promise'); // this output will also show because the promise is not stop the others code the codes run asynchronously
+*/
+
+
+//When promise uses
+//image download from server
+
+
+let prom = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        let a = 1+1;
+
+    if(a == 2){
+        resolve('Success');
+    }else{
+        reject('Failed')
+    }
+    },4000);
+    
+});
+
+//.then .catch
+
+prom.then((message)=>{
+    console.log('I am from then ' + message);
+}).catch((message) => {
+    console.log('I am from catch ' + message);
+})
+
+
+console.log('I am from after promise'); //here, it will work asynchronously it will not wait for promises
+
+
+
+---Part 105 Set---
+
+1. //Set
+
+//No duplicate can keep in set
+
+//How to create set
+//Set function give the object value for the output
+
+let mySet = new Set([1, 2, 3]);
+
+/*
+mySet.add('Hello');
+mySet.add(2); //here, 2 will not add in the set array because Set don't accept duplicate value
+//mySet.delete('Hello');//delete set value
+//mySet.clear();//clear set
+
+
+console.log(mySet.has(10))//check whether set has value 10 or not and given boolean value
+console.log(mySet.size);//check how much elements are exist in set
+
+console.log(mySet);
+*/
+
+
+/*
+//for loop works in set
+
+for(x of mySet){
+    console.log(x);
+}
+*/
+
+
+/*
+//Entries
+//Entries value and key should be same
+
+let iter = mySet.entries();
+console.log(iter.next());//show first value of the array
+console.log(iter.next());
+console.log(iter.next());
+console.log(iter.next());// for this value will be undefined becuase here no values are available
+*/
+
+
+//For loop in Entries
+
+/*
+for(x of mySet.entries()){//for individual output such as specificly for key or value just use mySet.key() for showing keys only and for 
+    console.log(x);
+}
+*/
+
+/*
+for(let [x] of mySet.entries()){//x vaiable has third bracket sign for creating array
+    console.log(x)
+}
+*/
+
+
+//Spread operator in set 
+
+let iter = [...mySet.keys()];
+console.log(iter);
+
+
+
+---Part 106 Map---
+
+1. //Map
+//Map is using for creating key and value for object
+
+let myMap = new Map(
+
+    [
+        ['First Key', 10],
+        ['Second Key', 'Hello']
+    ]
+
+);
+myMap.set('Third Key', 'Hello Bangladesh');//for adding new key and value
+
+console.log(myMap.get('First Key'));//get the value for the key
+console.log(myMap.has('Second Key'));//check the key has exist or not in the Map object list and output is boolean value
+console.log(myMap.size);//checking how much objects are in the map
+
+
+for(let x of myMap){//show all the keys and values of Map
+    console.log(x);
+}
+
+for (let [x, y] of myMap){//More organize way to show the keys and values of Map
+    console.log(x, y);
+}
+
+
+for(let x of myMap.keys()){//showing only keys
+    console.log(x);
+}
+
+
+for(let x of myMap.values()){//show only values 
+    console.log(x);
+}
+
+
+//forEach loop
+
+myMap.forEach((x, y)=>{
+    console.log(x, y);//here, for first parameter shows value and for second parameter shows keys
+})
+
+
+//Array in Mapping
+/*
+let arr = Array.from(myMap);
+
+console.log(arr);
+*/
+
+//Get Keys from Array in Map
+/*
+let arr = Array.from(myMap.keys());
+
+console.log(arr);
+*/
+
+//Get values from Array in Map
+
+let arr = Array.from(myMap.values());
+
+console.log(arr);

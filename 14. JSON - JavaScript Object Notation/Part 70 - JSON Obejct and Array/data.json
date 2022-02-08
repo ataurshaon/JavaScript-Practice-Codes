@@ -1,0 +1,8 @@
+{
+    "person" : [
+        {"name": "Shaon", "age" : 25, "homeTown" : "Feni", "married" : true },
+        {"name": "Rahi", "age" : 25, "homeTown" : "Noakhali", "married" : false },
+        {"name": "Mamun", "age" : 25, "homeTown" : "Khulna", "married" : false },
+        {"name": "Shakil", "age" : 25, "homeTown" : "ShoriatPur", "married" : true }
+    ]
+}
