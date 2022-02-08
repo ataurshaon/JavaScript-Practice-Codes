@@ -1,0 +1,436 @@
+[Midium!]
+
+Lesson: 34 - Parameters, Arguments and Return! 
+----------------------------------------------
+• Parameters as like a Variable.
+• Function always retrun one value. If you want to print multiple value at a time, you need you use Template Literal System. (Example 4).
+• Function Means DOT (Do One Thing at a Time!)
+
+	Example - 01
+	------------
+		function functionName (parametersName = "Default Value"){
+			alert(`This is ${parametersName}`);
+		}
+		functionName("Argumentes");
+
+	Example - 02 - Set Multiple Parameters and Argumentes.
+	------------------------------------------------------
+		function ibnuDesk (founder = "Someone", ceo = "Someone", fd = "Someone", year = " "){
+			console.log(`The Founder of IbnuDesk is ${founder}, And The CEO ${ceo} and the FD ${fd} - This Company First Launched in ${year}`);
+		}
+
+		ibnuDesk("Robiul Islam", "Ibnu Mahtab", "Noor Hussain!", 2021);
+
+	Example - 03
+	------------
+		function sum (a = 10, b = 10){
+			console.log(a + b);
+		}
+		sum(25, 95);
+
+	Example - 04
+	------------
+		function usesOfReturn(fname = " ", lname = " ", age = " "){
+			return (`${fname}, ${lname}, ${age}`);
+		}
+
+		var afterReturn = usesOfReturn("Ibnu Mahtab", "Hussain", 23);
+
+		console.log(afterReturn);
+
+
+Lesson: 35 - Function Expression and Arrow Function (ES6)
+---------------------------------------------------------
+• Function Expression 
+	
+	Example - 01
+	------------
+		let something = function (){
+			console.log("Hello World!");
+		}
+		something();
+	
+	Example - 02
+	------------
+		let something = function (position = " ", company = " "){
+			console.log(`I am the ${position} of ${company}`);
+		}
+		something("CEO", "IbnuDesk");
+	
+
+• Arrow Function (ES6)
+	
+	Example - 01
+	------------
+		let something = () => {
+			console.log("Hello World!");
+		}
+		something();
+	
+	Example - 02
+	------------
+		let something = name => {
+			console.log("Hello " + name);
+		}
+		something("Ibnu Mahtab");
+	
+	Example - 03
+	------------
+		let something = (name, mobile) => {
+			console.log("Hello " + name + " Mobile: " + mobile);
+		}
+		something("Ibnu Mahtab!", "01620000000");
+
+
+Lesson: 36 - Array Iteration using forEach and map
+--------------------------------------------------
+• Nameless function is called Function Expression.
+• function inside the forEach methode can keep only 3 Parameters. I am writing here the sequence of it's result.
+
+	1. First parameter for Elements / Item.
+	2. Second for parameter for it's index number.
+	3. Third for Whole Array!
+
+→ forEach
+
+	Example - 01
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		checkIt.forEach(function(elementsOrItems, indexNumber, wholeArray){
+			console.log(elementsOrItems, indexNumber);
+			console.log(wholeArray);
+		});
+	
+	Example - 02
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		let thisIsFunction = function(elementsOrItems, indexNumber, wholeArray){
+			console.log(elementsOrItems, indexNumber);
+			console.log(wholeArray);
+		};
+
+		checkIt.forEach(thisIsFunction);
+	
+	Example - 03
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		let thisIsFunction = function(elementsOrItems, indexNumber, wholeArray){
+			
+			console.log(`Index Number: ${indexNumber} Item: ${elementsOrItems}`);
+
+			console.log(wholeArray);
+		};
+
+		checkIt.forEach(thisIsFunction);
+	
+	Example - 04
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		let aName = checkIt.forEach(function(item, index, arr){
+			console.log(item, index, arr);
+		});
+
+→ map 
+
+	Example - 01
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		let arr = checkIt.map(function(item){
+			return `Company Needs ${item}`;
+		});
+
+		console.log(arr);
+
+	Example - 02
+	------------
+		let checkIt = ["IbnuDesk", "Ibnu Mahtab", "CEO"]
+
+		function company (item){
+			return `Company Stands with ${item}`;
+		}
+		let checkNow = checkIt.map(company);
+
+		console.log(checkNow);
+
+	Example - 03
+	------------
+		let numbers = [1, 3, 45, 63]
+
+		let makeMultiply = numbers.map(function(first){
+			return first * first;
+		});
+
+		console.log(makeMultiply);
+
+	Example - 04
+	------------
+		let numbers = ["IbnuDesk", "IbnuMahtab", "CEO"]
+
+		let makeMultiply = numbers.map(function(first, second, third){
+			return `Item : ${first} Index : ${second} Whole Array : ${third}`
+		});
+
+		console.log(makeMultiply);
+
+
+Lesson: 37 - Object Method
+--------------------------
+• When a function include as a object's value, it is called Methode.
+• In Object we can keep as a property values are:
+
+	1. String
+	2. Number
+	3. Array
+	4. Object 
+	5. Function
+
+• Everything is object in JavaScript basically.
+
+	let company = {
+		Founder : "Robiul Islam",
+		CEO : "Ibnu Mahtab Hussain",
+		FinancialDirector : "Noor Hussain",
+		ibnuDesk : function(){
+			return `The Founder of IbnuDesk is ${this.Founder} and The CEO is ${this.CEO} and The FD is ${this.FinancialDirector}`;
+		},
+	}
+	console.log(company.ibnuDesk());
+
+
+Lesson: 38 - Math Object
+------------------------
+• JavaScript made easy for your math Solution. Here is few important math objects.
+
+	→ Math.E 
+	→ Math.PI
+
+Ex: console.log(Math.E);
+	console.log(Math.PI);
+
+	→ Math.abs();
+	→ Math.floor();
+	→ Math.ceil();
+	→ Math.round();
+
+Ex: var n = 20.21;
+
+	console.log(Math.abs(n));
+	console.log(Math.floor(n));
+	console.log(Math.ceil(n));
+	console.log(Math.round(n));
+
+	→ Math.max();
+	→ Math.min();
+	→ Math.pow();
+	→ Math.sqrt();
+	
+Ex: console.log(Math.min(500, 1000, 200));
+	console.log(Math.min(10, 1, 1.2));
+	console.log(Math.pow(2,5));
+	console.log(Math.sqrt(25));
+
+	→ Math.random();
+
+Ex: console.log(Math.random());
+	console.log(Math.round(Math.random()));
+	console.log(Math.round(Math.random() * 100));
+
+
+Lesson: 39 - Date Function/Methode/Object
+-----------------------------------------
+• new Date();
+
+Ex: var date = new Data();
+	
+	console.log(date);
+
+	console.log(date.toString());
+	console.log(date.toDateString());
+
+	console.log(date.toLocaleString());
+	console.log(date.toLocaleDateString());
+
+	console.log(date.toTimeString());
+	console.log(date.toLocaleTimeString());
+
+----
+
+	console.log(date.getFullYear());
+	console.log(date.getMonth());
+	console.log(date.getDay());
+
+	console.log(date.getHours());
+	console.log(date.getMinutes());
+	console.log(date.getSeconds());
+	console.log(date.getMilliseconds());
+
+
+Lesson: 40 - var/let/const - Local & Global Scope
+-------------------------------------------------
+• var 
+
+	→ Re-assigned - YES 
+	→ Re-declare - YES 
+
+Ex: 
+	var a = 10;
+	a = a + 5;
+	console.log(a);
+
+	var a = 20;
+	console.log(a);
+→ You can re-assign or decalare 'c' once again.
+
+• let 
+
+	→ Re-assigned - YES 
+	→ Re-declare - NO 
+
+Ex:
+	let b = 30;
+	b = b + 10;
+	console.log(b);
+→ You can't decalare 'c' once again.
+
+• const
+
+	→ Re-assigned - YES 
+	→ Re-declare - NO 
+
+Ex: 
+	const c = 50;
+	console.log(c);
+→ You can't re-assign or decalare 'c' once again.
+
+---
+
+In JavaScript there are two types of scope:
+
+    → Local scope
+    → Global scope
+
+JavaScript has function scope: Each function creates a new scope.
+
+Scope determines the accessibility (visibility) of these variables.
+
+Variables defined inside a function are not accessible (visible) from outside the function.
+
+→ Can get access from global to Local
+→ You can't get access local to Global 
+
+	Example - 01
+	------------
+		var a = 1;
+		let b = 2;
+		const c = 3;
+		console.log(`Global Scope:`, a, b, c);
+
+		function localFuctionScope(){
+			var a = 4;
+			let b = 5;
+			const c = 6;
+			console.log(`Local Scope:`, a, b, c)
+		}
+		localFuctionScope();
+
+	Example - 02
+	------------
+		var a = 1;
+		let b = 2;
+		const c = 3;
+
+		var d = 10;
+
+		console.log(`Global Scope:`, a, b, c);
+
+		function localFuctionScope(){
+			var a = 4;
+			let b = 5;
+			const c = 6;
+			
+
+
+			console.log(`Local Scope:`, a, b, c, d) - [It is working here!]
+		}
+		localFuctionScope();
+
+	Example - 03
+	------------
+		var a = 1;
+		let b = 2;
+		const c = 3;
+
+		console.log(`Global Scope:`, a, b, c, d); - [It is not working here!]
+
+		function localFuctionScope(){
+			var a = 4;
+			let b = 5;
+			const c = 6;
+
+			var d = 100;
+
+			console.log(`Local Scope:`, a, b, c)
+		}
+		localFuctionScope();
+
+• When you use JavaScript, local variables are variables that are defined within functions. They have local scope, which means that they can only be used within the functions that define them. Global Variable: In contrast, global variables are variables that are defined outside of functions.
+
+	Example - 04
+	------------
+		var a = 10;
+		let b = 20;
+		const c = 30;
+		console.log(`Global Scope:`, a, b, c);
+
+		if(true){
+			var a = 40;
+			let b = 50;
+			const c = 60;
+			console.log(`if Scope:`, a, b, c);
+		}
+		console.log(`Global Scope:`, a, b, c); - [Here value of 'a' changed because of var.]
+
+→ Here you can get access from local to global and global to local both.
+
+	Example - 01
+	------------
+		var a = 10;
+		let b = 20;
+		const c = 30;
+
+		var globalToLocal = 50;
+
+		console.log(`Global Scope:`, a, b, c);
+
+		if(true){
+			var a = 40;
+			let b = 50;
+			const c = 60;
+
+			var localToGlobal = 100;
+
+			console.log(`if Scope:`, a, b, c, globalToLocal); - [Working!]
+		}
+		console.log(`Global Scope:`, a, b, c, localToGlobal); - [Working!]
+
+• This case will apply in 'for' loop too! But you can't get access local to global here.
+
+	Example - 01
+	------------
+		var a = 100;
+		let b = 200;
+		const c = 300;
+
+		var globalToLocal = 50;
+
+		console.log(`Global Scope:`, a, b, c);
+
+		for(var a = 1; a <= 10; a++){
+			console.log(a);
+		}
+		console.log(`Global Scope:`, a, b, c); - [Value of 'a' changed because of var.]

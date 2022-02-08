@@ -1,0 +1,1822 @@
+[Basic!]
+
+Lesson: 01 - How to Work JavaScripts? 
+-------------------------------------
+• JavaScripts output comes with 5 types.
+	1. window.alert('something')
+	2. alert('something')
+	3. document.write('something')
+	4. console.log('something')
+	
+	5. ID = make a html tag with a unique id ex:('<p id="id"></p>') then go to the script tag and write there - document.getElementById('something').innerHTML = "This is the result";
+	
+	Class = everything same as ID. Just write in Scripts tag like this: document.getElementByClassName[0].innerHTML = "This is from Class"; (here 0 is an index number.).
+	
+• console.log is an engine of JavaScripts. It named by Google as "Diet Engine".
+• complete every statment with semiclone to ignore error in future.
+
+
+
+Lesson: 02 - Syntax
+-------------------
+• Use Double Quotation in Double Quotation - Write like this: "This is \"JavaScripts\" Code";
+• Use Single Quotation in Single Quotation - Write like this: "This is \'JavaScripts\' Code";
+→ Methode: Use \ before the Quotation!
+
+• Use Double Quotation in Single Quotation or Single Quotation in Double Quotation without any fraction.
+
+• Use Back slice (\) in your JavaScripts code. 
+	To show single [\] write double [\\Something\\] 
+	To show double [\\] write four times [\\another something\\].
+→ Methode: write 2x times in case your expected results.
+
+• To create new line in same console and same string:
+	Write: console.log("My Name is \nIbnu Mahtab.");
+	Result: My Name is
+			Ibnu Mahtab.
+→ Methode: \n means new line. it works as like <br> tag in JavaScripts.
+
+• If you want to write any String (paragraph or line) write wrap them with quotation. But if you want to show any number you don't need to wrap them with quotation. If you do the number will change a string which hasn't any value.
+
+• Single line comment
+	// console.log('This is single Line comment Example in JavaScripts');
+	
+• Multiple Line Comment
+	/* console.log('This is Multiple Line comment Example in JavaScripts');
+	console.log('This is Multiple Line comment Example in JavaScripts'); */
+
+
+Lesson: 03 - User Input
+-----------------------
+• JavaScripts Built-in Method:
+	To Show Input popup use: prompt("Enter Your Name Here");
+	
+• To work with Variable in JavaScripts Use -
+	var
+	let (modern javascript es6)
+	const
+
+• If you want to store your input in variable follow these steps:
+	var x;
+	x = prompt("Enter Your Name Here");
+	
+	console.log(x);
+	document.write(x);
+
+
+Lesson: 04 - Variable (Part 1)
+------------------------------
+• Variable can declire in 3 methods.
+	1. var
+	2. let (only use in modern javascript and it has just few difference. We will discuss about it later.)
+	3. const (only for fixed use)
+	
+• In programming language equal means "Mark Assigned"!
+
+→ 2 methode to use Variable.
+	1. var myName;
+	   myName = "Ibnu Mahtab";
+	   
+	2. var myName = "Ibnu Mahtab";
+
+• variable can't start with number.
+
+• We can change variable's value at anytime. Here is an example:
+	→ var myName = "Ibnu Mahtab";
+	→ myName = "Ibnu Mahtab Hussain";
+	console.log(myName); - Result will show - Ibnu Mahtab Hussain.
+
+• How Variable actually works?
+	When we declare any variable var makes a memory address in out computer then make value for it.
+	After then, when we write that declaration of the var variable shows it's value from the address memory.
+
+
+Lesson: 05 - Variable (Part 2)
+------------------------------
+• Uses of var
+
+	var a = 20
+	var b = a 
+	→	It means value of b also 20.
+	console.log(b);
+
+	var x = 30;
+	var y = x
+	console.log(x);
+	→ result - 30.
+
+	x = 70;
+	console.log(x);
+	→ result - 70.
+
+	y = x;
+	console.log(y);
+	→ result - 70.
+
+	z = x + y 
+	console.log(z);
+	→ result - 140.
+
+• Variable declaration System
+	1. var $something
+	2. var _something
+	3. var camelCaseSystem
+		→ Camel Case Means your every later of the first word should be capital except the first one.
+	
+• Space is not allowed in variable.
+
+• JavaScripts follow case sensative system. If you write 
+	→ var a = "Something";
+	→ var A = "Nothing";
+Both will show different result. Because JavaScript won't catch only latter. It matters capatalization also.
+
+
+Lesson: 06 - Variable (Part 3)
+------------------------------
+• const can use only one time as like id. You can't use that text which has already in const in any other things. And the syntax should write like this:
+	→ const a = 20;
+	  console.log(a);
+	  result - 20.
+	
+	If you write:
+	  const a
+	  a = 20;
+	  console.log(a);
+	  You will get an error.
+
+• You can't use JavaScript reserved keywords for variable name and any other personal code! It conflict your programming. You can search on Google - "JavaScript Reserved Words". You'll get a list of those words.
+
+
+Lesson: 07 - Operator
+---------------------
+• 2 + 3 - Here is 2 and 3 is operand and the + symbol is operator.
+
+• There are kinds of operation available in JavaScript.
+	→ Conditional Operator
+	→ Logical Operator 
+	→ Arithmatics Operator etc.
+	
+• Here is the example of "Arithmatics Operator".
+	→ + (Plus);
+	→ - (Minus);
+	→ * (into);
+	→ / (devided);
+	→ % (Modulas); - To get end of the devided result.
+
+• Example of uses of Arithmatics Operator.
+	
+	→ Example: 1
+	~~~~~~~~~~~~
+		var a = 20
+		var b = 80
+		var c = a + b
+		console.log(c);
+		→ Result - 100. 
+
+	→ Example: 2 (Infinet operator)
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		var x = 100
+		x++; [It means (x + 1)] - here second '+' create the value of number 1.
+		console.log(x);
+		→ result - 101.
+		
+	→ Example: 3 (Definet operator)
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		var x = 100
+		x--; [It means (x - 1)] - here second '-' create the value of number 1.
+		console.log(x);
+		→ result - 99.
+
+	→ Example: 4
+	~~~~~~~~~~~~
+		var x = 20;
+		var y = 30;
+		var c, d;
+		
+		c = x++;
+		console.log(c);
+		→ Result - 20. 
+		
+		[Because here is firstly 'x' gives his value right of equal then increas it's value. That's why the value of c is same. But if you write:
+			
+		console.log(x);
+		→ Result - 21. [Because main value of 'x' here 20 then increas 1.]
+		
+		d = ++y;
+		console.log(d);
+		→ Result - 31.
+		
+		[Because here is firstly 'y' increas its value then transfer it to d. That's why the value of 'd' and 'y' are always same.] 
+
+		• If you assigned '-' minus operaton all the logics work as like '+' as well.
+
+	→ Example: 5
+	~~~~~~~~~~~~
+		var x = 50;
+		x+= 40; [It means (x = x + 40)]
+		console.log(x);
+		→ Result - 90.
+
+		var x = 50;
+		x-= 40; [It means (x = x - 40)]
+		console.log(x);
+		→ Result - 10.
+
+		var x = 50;
+		x*= 40; [It means (x = x * 40)]
+		console.log(x);
+		→ Result - 2000.
+
+		var x = 50;
+		x/= 40; [It means (x = x / 40)]
+		console.log(x);
+		→ Result - 1.25.
+
+		var x = 50;
+		x%= 40; [It means (x = x % 40)]
+		console.log(x);
+		→ Result - 10.
+
+• Priority of operators.
+		1. /
+		2. *
+		3. +
+		4. -
+	→ if you want to make priority with your choice just wrap them with '()';
+
+• Variable with Strings.
+	var name = Ibnu Mahtab;
+	console.log("My Name is", name, "Hussain.");
+	
+• Complete these Task:
+	→ You bought 4 eggs from a grocery shop and every egg's price is 20 BDT. How it will total cost?
+	→ You have 5000 BDT. and You want to know how much it will if it converted into USD. Do this with JavaScript.
+
+
+Lesson: 08 - String Operator
+----------------------------
+• Works with + in programming language called 'concat' or 'concatanation'.
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var first = "Hello";
+		var second = "World";
+		var final = first + second;
+		→ Result - HelloWorld.
+	If you want [space] between Hello and World simply make first variable "Hello " like this. Or you can do this same thing like this:
+		
+		final = first + " " + second;
+		→ Result - Hello World.
+	 	
+• When you concat number with any string data the final output will show as string.
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var number = 50;
+		var name = Ibnu;
+		var output = number + name;
+		console.log(output);
+		Result - 50Ibnu.
+		
+		→ If you want to ensure the types of its data just write like this:
+			console.log(typeof output);
+			→ Result - String.
+
+• JavaScript read "Left to Right".
+	
+	→ Example: 1
+	~~~~~~~~~~~~
+		var name = "Ibnu";
+		var number1 = 42
+		var number2 = 0
+		var result = name + number1 + number2;
+		console.log(result);
+		→ Result - Ibnu420.
+		
+	Because JavaScript first read from left and found data that it's string. So, it concat Ibnu with 42 [Ibnu42] then go for another and concat with 0. Final Result Ibnu420.
+
+	→ Example: 2
+	~~~~~~~~~~~~
+		var number1 = 42
+		var number2 = 8
+		var name = "Ibnu";
+		var result =number1 + number2 + name;
+		console.log(result);
+		→ Result - 50Ibnu.
+		
+	Same logic. JavaScript reads their data from "Left to Right". First he read the number then found string.
+
+	→ Example: 3
+	~~~~~~~~~~~~
+		var number1 = "10";
+		var number2 = "5";
+		
+		'-'
+		var result = number1 - number2
+		console.log(result);
+		→ Result - 5.
+		
+		'*'
+		var result = number1 * number2
+		console.log(result);
+		→ Result - 5.
+		
+		'/'
+		var result = number1 / number2
+		console.log(result);
+		→ Result - 2.
+		
+		But when you use '+' 
+		var result = number1 + number2
+		console.log(result);
+		→ Result - 105. [Not 15] - Because it concat string, not number.
+
+	→ Example: 4
+	~~~~~~~~~~~~
+		var number1 = 42
+		var name = "Ibnu";
+		var result =number2 - name;
+		console.log(result);
+		→ Result - NaN (Not a Number).
+	• When we use any other operator except '+' the in kinds of case the result will show "NaN" which declare 'Not a Number'.
+	• NaN is a special character of JavaScript.
+
+
+Lesson: 09 - Comparison, Logical and Conditional Operator
+---------------------------------------------------------
+• Comparison Operator - The two values are compared through that operator!
+
+• Comparison Operators are:
+	1. ==
+	2. ===
+	3. !=
+	
+	4. > (less than)
+	5. < (greater than)
+	6. >=
+	7. <=
+	
+→ ==
+	var number1 = 10;
+	var number2 = 10;
+	console.log(number1 == number2);
+	→ Result: true;
+
+	var number1 = 10;
+	var number2 = 20;
+	console.log(number1 == number2);
+	→ Result: false;
+	
+• '==' matters only values. It could be wraped by string or not. It doesn't matter. It means if you write like this:
+	var something1 = 10
+	var something2 ="10"
+	console.log(something1 == something2);
+	→ Result: true;
+
+• '===' check both value and data types. So if you write:
+	var something1 = 10
+	var something2 ="10"
+	console.log(something1 === something2);
+	→ Result: false;
+[Because here is value same but not same data types.]
+
+So, to make it true, you have to write:
+	
+	→ Example: 1
+	~~~~~~~~~~~~
+	var something1 = "10";
+	var something2 ="10";
+	console.log(something1 === something2);
+	→ Result: true;
+	
+	or
+	
+	→ Example: 2
+	~~~~~~~~~~~~
+	var something1 = 10;
+	var something2 =10;
+	console.log(something1 === something2);
+	→ Result: true;
+	
+• Not equals indicate in JavaScript with '!=' 
+
+	→ Example: 1
+	~~~~~~~~~~~~
+	var something1 = 10;
+	var something2 =10;
+	console.log(something1 != something2);
+	→ Result: false;
+	
+	var something1 = 10;
+	var something2 =20;
+	console.log(something1 != something2);
+	→ Result: true;
+
+4. > (less than)
+5. < (greater than)
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var something1 = 50;
+		var something2 = 20;
+		console.log(something1 > something2);
+		→ Result: true;
+		
+		or
+		
+	→ Example: 2
+	~~~~~~~~~~~~
+		var something1 = 50;
+		var something2 = 20;
+		console.log(something1 < something2);
+		→ Result: false;
+
+6. >=
+7. <=
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var something1 = 50;
+		var something2 = 20;
+		console.log(something1 >= something2);
+		→ Result: true;
+		
+		or
+		
+	→ Example: 2
+	~~~~~~~~~~~~
+		var something1 = 50;
+		var something2 = 20;
+		console.log(something1 <= something2);
+		→ Result: false;
+
+	→ Example: 3
+	~~~~~~~~~~~~
+		var something1 = 30;
+		var something2 = 30;
+		console.log(something1 <= something2);
+		→ Result: true;
+
+• Logical Operator
+	In case of using logical operator we need to use condition. And the best practice for logical operator is console.log(); Logical Operator ar two types.
+		1. || [OR Operator]
+		2. && [AND Operator]
+	
+	|| OR Operator ||
+• If one data get true, then result will show true. if both ar false, then result false. Let me give some example.
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		True:
+			true
+			→ Result: true;
+			
+			true || true
+			→ Result: true;
+			
+			true || false
+			→ Result: true;
+			
+			false || true
+			→ Result: true; 
+		
+		False:
+			false
+			→ Result: false;
+			
+			false || false
+			→ Result: false;
+
+	→ Example: 2
+	~~~~~~~~~~~~
+		var x = (9 < 10); //true;
+		var y = (100 > 500); false;
+		console.log(x || y);
+		→ Result: True;
+		
+	&& AND Operator &&
+• If one data get false, then result will show false. if both ar false, then result false. Let me give some example.
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		True:
+			true
+			→ Result: true;
+			
+			true || true
+			→ Result: true;
+			
+			true || false
+			→ Result: false;
+			
+			false || true
+			→ Result: false; 
+		
+		False:
+			false
+			→ Result: false;
+			
+			false || false
+			→ Result: false;
+
+	→ Example: 2
+	~~~~~~~~~~~~
+		var x = (9 < 10); //true;
+		var y = (100 > 500); false;
+		console.log(x && y);
+		→ Result: False;
+
+• The conditional (ternary) operator is the only JavaScript operator that takes three operands: a condition followed by a question mark ( ? ), then an expression to execute if the condition is truthy followed by a colon ( : ), and finally the expression to execute if the condition is falsy.
+	Conditional Operator:
+		1. ?
+		2. :
+		
+	→ Example: 1
+	~~~~~~~~~~~~
+		var a = (10 < 11) ? "Mirpur" : "Dhaka"
+		console.log(a);
+		→ Result: Mirpur.
+
+	→ Example: 2
+	~~~~~~~~~~~~
+		var a = (100 < 11) ? "Mirpur" : "Dhaka"
+		console.log(a);
+		→ Result: Dhaka.
+
+
+Lesson: 10 - Assignment Operator
+--------------------------------
+• '=' this is the assignment operator. Almost in every programming language this is called by this name.
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var a = 20;
+		console.log();
+		→ Result: 20.
+		
+		var b = 50;
+		console.log();
+		→ Result: 50.
+		
+		var a = 30;
+		console.log(a);
+		→ Result: 30;
+		
+		var c = (a + b);
+		console.log(c);
+		→ Result: 80.
+		
+	→ Example: 2
+	~~~~~~~~~~~~
+		var x = "Hello "
+		console.log(x + "World!");
+		→ Result: Hello World!
+
+
+Lesson: 11 - Data Types
+-----------------------
+• There are 5 types of Data available in JavaScript.
+	1. Number
+		Ex: 1, 2, 10, 100 etc.
+		Floating Number (In other language. But JavaScript has no variation for this): 1.2, 34.99 etc.
+		
+		Extra Knowledge:
+			Integer Type Data: 1, 10, 3, 505 etc.
+			Floating Number: 2.3, 99.43, 120.44 etc.
+		
+	2. String
+		Every character wraped with '' or "" is string.
+		Ex: var a = "Hello World"
+			var b = '101' 
+			
+	3. Boolean
+		Which is declare by 'true' or 'false' only.
+		
+	4. Array
+		An array is a special variable, which can hold more than one value at a time and all value must be wraped with []. And every value seperate by comma.
+		Ex: var a = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"]
+
+	5. Object
+		It is almost kind of Arrat type Data. But this can hold more details than Array. Value must be inside of {} and all values can be seperated by comma. Here is an example of Object type data.
+		
+			var obj = {
+				studentName : "Ibnu Mahtab Hussain",
+				age : 23,
+				Mobile : "01620xxxxxxx";
+			};
+			
+• There are more Types of Data available in JavaScript. Like:
+	6. undefine
+	7. empty value
+	8. null
+	9. NaN
+
+
+Lesson: 12 - Number Data Types
+------------------------------
+→ Floating Number 
+	var x = 12.99;
+	console.log(x);
+	→ Result: 12.99.
+	
+→ Integer Number 
+	var y = 10;
+	console.log(y);
+	→ Result: 10.
+	
+→ Exponential Number
+	var z = 123e5;
+	console.log(z);
+	→ Result: 12300000;
+• Exponential can declare with '**'. 'e' means power. and it's power another number. If you write the code like this:
+	var z = 123 * 10 ** 5;
+	console.log(z);
+	→ Result: 12300000;
+
+→ Infinity Number
+	var a = 25 / 0;
+	console.log(a);
+	→ Result: Infinity.
+[Any number when devided by 0 will become infinity]
+
+• To know data types of any value write 'typeof' before it. Here is an example:
+	var m = 40;
+	console.log(typeof m);
+	→ Result: number.
+	
+• To convert anything into the string, you need to use a built in method of javascript which is: toString(); 
+[All methode when wrote should finish with parenthisis - (). Ex: toString(); 
+
+	→ Desimal Number
+		var number = 50; 
+		var store = number.toString(); [This variable used to store the value or result].
+		console.log(typeof store);
+		→ Result: String.
+	After convert it into the string it called desimal number.	
+
+	→ Binary Number 
+		var number = 50; 
+		var store = number.toString(2); [here number 2 is to convert the number into the binary number.].
+		console.log(typeof store);
+		→ Result: 10111011 - [String].
+
+	→ Octal Number
+		var number = 50; 
+		var store = number.toString(8); [here number 8 is to convert the number into the octal number.].
+		console.log(typeof store);
+		→ Result: 273 - [String].
+
+	→ Hex Decimal Number
+		var number = 187; 
+		var store = number.toString(16); [here number 16 is to convert the number into the hex decimal number.].
+		console.log(typeof store);
+		→ Result: bb - [String].
+		
+	→ Precision
+	
+		→ Example: 1
+		~~~~~~~~~~~~
+			var x = 12.3435;
+			var y = x.toPrecision();
+			console.log(y);
+			→ Result: 12.3435 - [String].
+
+		→ Example: 2
+		~~~~~~~~~~~~
+			var x = 12.3435;
+			var y = x.toPrecision(1);
+			console.log(y);
+			→ Result: 12 - [String].
+
+		→ Example: 3
+		~~~~~~~~~~~~
+			var x = 12.3435;
+			var y = x.toPrecision(2);
+			console.log(y);
+			→ Result: 12.3 - [String].
+
+		→ Example: 4
+		~~~~~~~~~~~~
+			var x = 12.3435;
+			var y = x.toPrecision(3);
+			console.log(y);
+			→ Result: 12.34 - [String].
+
+		→ Example: 5
+		~~~~~~~~~~~~
+			var x = 12.3435;
+			var y = x.toPrecision(10);
+			console.log(y);
+			→ Result: 12.343500000 - [String].
+
+		
+• 'parseInt' Methode:
+	var a = 20;
+	var b = a.toString();
+	console.log(b);
+	→ Result: 20 - [String].
+
+	var c = parseInt(b);
+	console.log(c);
+	→ Result: 20 - [Number].
+	
+••• What if I write "var c = b.parseInt()"; instead of "var c = parseInt(b)"; •••
+
+• 'parseFloat' Methode:
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var a = "3.4045";
+		var b = parseInt(a);
+		console.log(b);
+		→ Result: 3 - [Number].
+
+	→ Example: 2
+	~~~~~~~~~~~~
+		var a = "3.4045";
+		var b = parseFloat(a);
+		console.log(b);
+		→ Result: 3.4045 - [Number].
+
+• We can use multiple value in one mathode.
+	var x = 3.4564
+		y = x.toString();
+	console.log(y);
+	→ Result: 3.4564 - [String].
+	
+	var makingItToNumber = parseFloat(y.toString());
+	console.log(makingItToNumber);
+	→ Result: 3.4564 - [Number].
+
+
+• 'isNaN' Method:
+
+	→ Example: 1
+	~~~~~~~~~~~~
+	var a = 45; [or you can keep the number as string. It doesn't matter.]
+	var b = isNan(a);
+	console.log(b);
+	→ Result: false;
+	
+	→ Example: 2
+	~~~~~~~~~~~~
+	var a = "45lorem"; [or you can keep it without double quotation. It doesn't matter.]
+	var b = isNan(a);
+	console.log(b);
+	→ Result: true;
+	
+
+Lesson: 13 - String Data Types (Part 1 & 2)
+-------------------------------------------
+• String Literal:
+	var str = "SomeThing";
+	
+• String Constructor:
+	var str2 = string('Nothing');
+	
+NOTE: There is no difference between in these two types of declaration. But you should follow only 1 syntax in your project. It is standard.
+
+• Here is few example to convert any number into the 'String'!
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var a = 10;
+			b = a + '';
+		console.log(b);
+		→ Result: 10 - [String].
+		
+	→ Example: 2
+	~~~~~~~~~~~~
+		var x = 2;
+			y = x.toString();
+		console.log(y);
+		→ Result: 2 - [String].
+		
+	→ Example: 3
+	~~~~~~~~~~~~
+		var m = 5;
+			n = string(n);
+		console.log(n);
+		→ Result: 5 - [String].
+		
+• Excape Notation:
+
+	→ Example: 1
+	~~~~~~~~~~~~
+		var str = 'This is a \'String\'';
+		console.log(str);
+		→ Result: This is a 'String'
+	
+	→ Example: 2
+	~~~~~~~~~~~~
+		var str = "This is a \"String\"";
+		console.log(str);
+		→ Result: This is a "String"
+
+	→ Example: 3
+	~~~~~~~~~~~~
+		var str = 'This is a \nString\';
+		console.log(str);
+		→ Result: This is a 
+				  String
+
+	→ Example: 4
+	~~~~~~~~~~~~
+		var str = 'This is a \tString\';
+		console.log(str);
+		→ Result: This is a		String
+
+	→ Example: 5
+	~~~~~~~~~~~~
+		var str = 'This is a \\String\\';
+		console.log(str);
+		→ Result: This is a \String\
+
+	→ Example: 6
+	~~~~~~~~~~~~
+		var str = 'This is a \\\\String\\\\';
+		console.log(str);
+		→ Result: This is a \\String\\
+
+
+• String Methods:
+	
+	→ concat
+		var a = 'Ibnu Mahtab';
+			b = 'Hussain';
+			x = 23;
+			
+		var c = a.concat(b, ' ', 'I am', x, ' ', 'years old.');
+		console.log(c);
+		→ Result: Ibnu Mahtab Hussain I am 23 years old.
+	
+	→ Sub String
+		var x = "I am Ibnu Mahtab Hussain";
+			y = x.substr(5);
+		
+		console.log(y);
+		→ Result: Ibnu Mahtab Hussain
+		
+			y = x.substr(5, 15);
+			
+		console.log(y);
+		→ Result: Ibnu Mahtab
+		
+		console.log(x.charAt(10));
+		→ Result: M
+		
+		var m = 'Full Name';
+			n = m.startsWith('Full');
+		console.log(n);
+		→ Result: true
+		
+		var m = 'Full Name';n = ;
+		console.log(m.endsWith('Full'));
+		→ Result: false
+		
+		var o = 'all uppercase';
+		console.log(o.toUpperCase());
+		→ Result: ALL UPPERCASE
+		
+		var o = 'all lowercase';
+		console.log(o.toLowerCase());
+		→ Result: all lowercase
+		
+		var p = '            remove unwanted space    ';
+		console.log(p.trim());
+		→ Result: remove unwanted space		
+		
+• Convert into the Array
+
+	→ Full Sentence
+		var x = 'This is a sentence';
+	console.log(x.split());
+	→ Result: ["This is a sentence"]
+	
+	→ Every Single Character
+		var y = 'a word';
+	console.log(y.split(''));
+	→ Result: ["a", " ", "w", "o", "r", "d"]
+		
+	→ Every Single Word
+		var x = 'This is a sentence';
+	console.log(x.split(' '));
+	→ Result: (5) ["This", "is", "a", "sentence"]	
+		
+		
+		
+Lesson: 14 - Boolean Data Types
+-------------------------------
+• If any data store in a var the boolean result will show as true. For example: 
+	var a = "This is Something"
+		b = boolean(a);
+	console.log(b);
+	→ Result: true.
+		
+• Boolean Data Returns false result in following situation:
+	1. undefined
+	2. null
+	3. NaN
+	
+		→ undefined
+		-----------
+		var x;
+		console.log(x);
+		→ Result: undefined.
+		
+		console.log(boolean(x));
+		→ Result: false.
+
+		→ null
+		------
+		var m = null;
+		console.log(m);
+		→ Result: null.
+		
+		console.log(boolean(m));
+		→ Result: false.
+		
+		
+		→ NaN
+		-----
+		var m = 10 / 'g';
+		console.log(m);
+		→ Result: NaN.
+		
+		console.log(boolean(m));
+		→ Result: false.
+
+		
+Lesson: 15 - Array Data Types
+-----------------------------
+• Array can hold more than one value at a time and all value must be wraped with []. And every value seperate by comma.
+	
+	Ex: var a = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"]
+		
+• length is a kind of property of Array.
+• Array's index number can called by position number.
+
+• Uses of property:
+	var a = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"]
+	console.log(a.length);
+	→ Result: 5.
+		
+• How to replace a new data in existing index number?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"];
+	x[4] = "01620 - 647820";
+	console.log(x);
+	Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820"].
+		
+• How to get single data from array to variable?
+	var m = ["Ibnu Mahtab", "Bintu Mahtab", "MD. Ali", "Robiul", "Noor Hussain"]
+	var n = m[2];
+	console.log(n);
+	→ Result: MD. Ali.
+	
+	→ Best System to Add new Data in Array
+		var m = ["Ibnu Mahtab", "Bintu Mahtab", "MD. Ali", "Robiul", "Noor Hussain"]
+		var n = m[2];
+		
+	
+• How to add a new data in an array?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"];
+	x[5] = "Bangladesh";
+	console.log(x);
+	→ Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh"].
+		
+• How to send data in the last length of Array? 
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"];
+		x[x.length] = "Bangladesh";
+	console.log(x);
+	→ Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh"].
+		
+		
+• How to add data in the last of Array?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"];
+		x.push("Mirpur", "Pallabi", "Dhaka");
+	console.log(x);
+	→ Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur", "Pallabi", "Dhaka"].
+
+• How to remove data in the last of Array?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur", "Pallabi", "Dhaka"];
+		x.pop();
+	console.log(x);
+	→ Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur", "Pallabi"].
+		
+		x.pop();
+	console.log(x);
+	→ Result: ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur"].
+	
+• How to add data in the start of the Array?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647 820"];
+		x.unshift("Student");
+	console.log(x);
+	→ Result: ["Student", "Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur"].
+	
+• How to remove data in the start of Array?
+	var x = ["Ibnu Mahtab", 23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur", "Pallabi", "Dhaka"];
+		x.shift();
+	console.log(x);
+	→ Result: [23, "Male", true, "01620 - 647820", "Bangladesh", "Mirpur", "Pallabi"].	
+
+		
+Lesson: 16 - Array Data Types (Last Part)
+-----------------------------------------
+|•| 13 - String Data Types (Part 1 & 2) |•| → Follow this NOTE!
+
+• How to works with blank array?
+	var khali = [];
+	khali.push(1, 2, "Ibnu Mahtab", true);
+	console.log();
+	→ Result: [1, 2, "Ibnu Mahtab", true]
+	
+• How to make String to Array?
+	var str = "Alhamdulillah";
+		arr = str.split();
+	console.log(arr);
+	→ Result: [ "Alhamdulillah" ]
+	
+• How to make Empty String?
+	var something = "";
+	console.log(something);
+	→ Result: <empty string>
+	
+• How to make Array to String?
+	var arr = [1, 2, "Ibnu Mahtab", true];
+		str = arr.join();
+	console.log(str);
+	→ Result: 1,2,Ibnu Mahtab,true
+	
+		str = join(" ");
+	console.log(str);
+	→ Result: 1 2 Ibnu Mahtab true
+	
+• How to Concat Array with Ascending and Descending system?
+	
+	var con1 = ["Bangladesh", "India", Pakistan"]
+		con2 = ["Saudi", "Canada", "Nepal"]
+		
+	var jora = con1.concat(con2);
+	console.log(jora);
+	→ Result: ["Bangladesh", "India", Pakistan", "Saudi", "Canada", "Nepal"]
+	
+	→ Ascending
+	-----------
+		jora.sort();
+		console.log(jora);
+	→ Result: ["Bangladesh", "Canada", "India", "Nepal" Pakistan", "Saudi"]
+	
+	→ Descending
+	------------
+		jora.reverse();
+		console.log(jora);
+	→ Result: [ "Saudi", Pakistan", "India", "Nepal", "Canada", "Bangladesh"]
+
+		
+Lesson: 17 - More Array and Object
+----------------------------------
+• We can keep array inside an Array. Here is an example:
+	var something = [1, 2, 3 ["a", "b"], 4, 5 6]
+console.log(something);
+
+→ Result: 
+	Array(5) [ 1, 2, (2) […], 4, 5 ]
+​
+0: 1
+​
+1: 2
+​
+2: Array [ "a", "b" ]
+​
+3: 4
+​
+4: 5
+​
+length: 5
+​
+<prototype>: Array []
+	
+• If you want to access "b" - you need to console like this:
+	console.log(something[2][1]);
+→ Result: b 
+
+→ By following this method you can nested as many as you like.
+
+• How to access object inside an Array?
+	var arr = [1, 2, ['something1', 'something2'], 3, {prop1: 'this is 1', prop2: 'this is 2'}]
+console.log(arr);
+
+→ Result: 
+	Array(5) [ 1, 2, (2) […], 3, {…} ]
+​
+	0: 1
+
+	1: 2
+	​
+	2: Array [ "something1", "something2" ]
+	​
+	3: 3
+	​
+	4: Object { prop1: "this is 1", prop2: "this is 2" }
+	​
+	length: 5
+	​
+	<prototype>: Array []
+
+console.log(arr[4]["prop1"])
+→ Result: this is 1
+
+console.log(arr[4].prop1)
+→ Result: this is 1
+	
+• Nested and Nested
+	var arr = [1, 2, ['something1', 'something2'], 3, {prop1: 'this is 1', prop2: [1, "a", 2, ["x", "y"]]}]
+
+	console.log(arr[4].prop2[3][1]);
+	→ Result: y
+	
+
+• How to print from Object?
+	var obj = {
+    something1 : 1,
+    something2 : 2,
+    something3 : [{prop1 : 1, prop2 : ['nested1', 'nested2']}]
+}
+console.log(obj.something3[0]['prop2'][1])
+→ Resul: nested2
+
+		
+Lesson: 18 - undefined, null, NaN and Empty Data Type
+-----------------------------------------------------
+
+→ Undefined
+-----------
+	• When you use typeof for undefined it will Return boolean type of Data.
+
+		var a;
+		console.log(typeof a)
+		→ Result: undefined.
+
+	• Undefined is a kind of Data which is returns true value as it is 'Data' and 'Data Types'. Here is two examples are below.
+
+		console.log(a == undefined)
+		→ Result: true
+
+		console.log(a === undefined)
+		→ Result: true
+
+→ Null
+------
+	• When you use typeof for undefined it will Return object type of Data.
+		var a = null;
+		console.log(typeof a);
+		→ Result: object
+	
+	• Null can Store Truthy types of Data
+
+		console.log(a == null);
+		→ Result: true 
+
+		console.log(null == undefined);
+		→ Result: true 
+	
+	• When we keep any data in Null and compare with undefine it will show falsy data.
+
+		var a = null;
+		console.log(null === undefined);
+		→ Result: false 
+
+→ Empty Data Type
+-----------------
+	var x = '';
+	console.log(typeof x);
+	→ Result: string
+	console.log(x);	
+	→ Result: <empty string>
+
+→ NaN
+-----
+	var x = 10 / 'h'
+	console.log(x);
+	→ Result: NaN
+
+		
+Lesson: 20 - Primitive Data Type and Reference Data Type
+--------------------------------------------------------
+	
+• Primitive Data Type: Number, String, Boolean → Deals with Value.
+
+	let a = 9;
+    b = a;
+console.log(b)
+→ Result: 9
+
+	a = 90;
+console.log(b)
+→ Result: 9
+
+→ Data is not changing. Which means Primitive Data deals with only value of it.
+
+	let a = "Ibnu";
+    b = a;
+console.log(b)
+→ Result: Ibnu
+
+	a = "Mahtab"
+console.log(b)
+→ Result: Ibnu
+
+→ Same here!
+	
+	
+• Reference Data Type: Array, Object → Deals with Address.	
+	
+	let x = [1, 3, 20];
+    y = x;
+console.log(y)
+→ Result: Array(3) [ 1, 3, 20 ].
+
+x[0] = 100;
+console.log(x)
+→ Result: Array(3) [ 100, 3, 20 ].
+
+console.log(y)
+→ Result: Array(3) [ 100, 3, 20 ]
+	
+→ WOW! Data is changing. Which means Reference Data deals with both value and address.
+
+		
+Lesson: 21 - Control Flow
+-------------------------
+var x = prompt();
+if(x <= 20){
+    console.log("Awesome")
+} else {
+    console.log("Not Bad")
+}
+
+→ Result: Check your result in browser.
+
+		
+Lesson: 22 - condition (Part - 01)
+----------------------------------
+
+Example - 01
+------------
+	var age = prompt();
+
+	if(age >= 60 && age <= 100){
+		console.log("This man has reached at the last part of his age.")
+	} else if (age >= 40 && age < 60){
+		console.log("You have to care about Akhirah!")
+	} else if (age >= 25 && age <= 39){
+		console.log("He is young man now!")
+	} else if (age >= 20 & age <= 24){
+		console.log("A Young Boy")
+	} else if (age >= 13 && age <= 19){
+		console.log("Tinager")
+	} else if (age >= 6 && age <= 13){
+		console.log("Little Boy!")
+	} else if (age > 0 && age <= 5){
+		console.log("Baby")
+	} else {
+		console.log("Invalid Age Input")
+	}
+	→ Result: Check in your browser.
+
+Example - 02
+------------
+	var number = prompt();
+var valueless = 0;
+
+if (number > 0){
+    console.log("Valuable number inputed successfully because the number", valueless, "has no value.")
+} else {
+    console.log("Invalid input")
+}
+
+		
+Lesson: 23 - condition (Part - 02)
+----------------------------------	
+
+Example - 01
+------------
+	var name1 = "Ibnu";
+		name2 = "Mahtab";
+		nowit = true;
+	if (name1 == "Ibnu" && name2 == "Mahtab" && nowit){
+		console.log("Everything is OKAY!")
+	} else {
+		console.log("Something is wrong!")
+	}
+
+	→ Result: Everything is OKAY!
+
+
+Example - 02
+------------
+	var number = 10;
+
+	if (number > 0){
+		var output = "This " + number + " number is Positive Value"
+	} else {
+		var output = "This " + number + " number is Negative Value"
+	}
+	console.log(output)
+
+	→ Result: This 10 number is Positive Value
+
+• Even Number: When a number devided by two there is no remainder then it called "Even Number".
+
+• Odd Number: When a number devided by two there is remainder 1 avavible then it called "Odd Number".
+
+	Example - 01
+	------------
+		var n = 12;
+
+		if (n % 2 == 0) {
+			console.log('Even Number')
+		} else {
+			console.log('Odd Number')
+		}
+		→ Result: Even Number
+	
+	
+	Example - 02
+	------------
+		var n = 13;
+
+		if (n % 2 == 0) {
+			console.log('Even Number')
+		} else {
+			console.log('Odd Number')
+		}
+		→ Result: Odd Number
+			
+
+	Example - 03
+	------------
+		var n = 0;
+		var remainder = n % 2;
+		var result;
+
+		if (n == 0){
+			result = "This is Nutral Number"
+		} else if (remainder == 0){
+			result = "This is Even Number"
+		} else {
+			result = "Odd Number"
+		}
+		console.log(result)
+
+		→ Result: This is Nutral Number
+
+		
+Lesson: 24 - Switch
+-------------------
+• Switch is likely if-else system in JavaScript and easy to use. 1st I am giving you an example of if-else, then I'll write 'Switch' code. So that you can compare both.
+
+	if-else
+	-------
+		var input = prompt();
+		var output;
+
+		if (input == "a"){
+			output = "You are 1st"
+		} else if (input == "b"){
+			output = "Your are 2nd"
+		} else if (input == "c"){
+			output = "You are 3rd"
+		} else {
+			output = "You are out of the List!"
+		}
+		console.log(output)
+
+
+	switch
+	------
+
+		Example - 01
+		------------
+			var input = prompt();
+			var output;
+
+			switch (input){
+				case "a":
+					output = "First One";
+					break;
+				case "b": 
+					output = "Second One";
+					break;
+				case "c": 
+					output = "Third One";
+					break;
+				default:
+					output = "Unlisted";
+			}
+			console.log(output)
+
+		Example - 02
+		------------
+			var input = prompt();
+			var day;
+
+			switch(input){
+				case "1":
+					day = "Saturday"
+					break;
+				case "2":
+					day = "Sunday"
+					break;
+				case "3":
+					day = "Monday"
+					break;
+				case "4":
+					day = "Tuesday"
+					break;
+				case "5":
+					day = "Webnesday"
+					break;
+				case "6":
+					day = "Thursday"
+					break;
+				case "7":
+					day = "Friday"
+					break;
+				default: 
+					day = "Invalid Input"
+			}
+			console.log(day)
+		
+
+Lesson: 25 - Condition Excersize
+--------------------------------
+• Make a Result System using Switch.
+	- I could'nt!
+
+
+Lesson: 26 - Loop
+-----------------
+• What is Loop?: When you need to re-write something many times you need then you can use loop. Loop has 3 types with sub types. There are...
+
+	1. for
+		a. for in loop
+		b. for of loop
+	2. while
+	3. do while
+
+
+Lesson: 27 - for Loop
+---------------------
+• In First Bracket, 1st statement is "Initializer", 2nd is "Condition" and the 3rd is "Increament / Decreament".
+
+	Example - 01
+	------------
+		for(var i = 11; i <= 20; i += 1){
+			document.write(" Ibnu Mahtab ");
+		}
+
+	Example - 02
+	------------
+		for(var i = 10; i <= 100; i += 10) {
+    		console.log(i)
+		}	
+
+	Example - 03 - Reverse!
+	-----------------------
+		for(var i = 19; i >= 1; i -= 3){
+    		console.log(i)
+		}
+
+
+Lesson: 28 - while Loop
+-----------------------
+•••
+var Initializer = value
+while (condition){
+	execution
+}
+•••
+
+	Example - 01
+	------------
+		var i = 1;
+		while (i <= 10){
+			console.log(i);
+			i ++;
+		}
+
+	Example - 02
+	------------
+		var i = 1;
+		while (i <= 10) {
+			if (i == 5) {
+				console.log("This is Command!");
+			}
+			console.log(i);
+			i++;
+		}
+
+	Example - 03
+	------------
+		var i = 1;
+		while(i < 10){
+			if(i % 2 == 1){
+				console.log(i);
+			}
+			i++;
+		}
+
+	Example - 04
+	------------
+		var i = 1;
+		var sum = 0;
+
+		while(i <= 10){
+			sum = sum + i;
+			i++;
+		}
+		console.log(sum);
+		→ Result: 55.	
+
+	Example - 05
+	------------
+		var i = 1;
+		var m = 1;
+
+		while(i <= 3){
+			m = m * i; 
+			i++;
+		}
+		console.log(m);			
+
+
+Lesson: 29 - Do while Loop
+--------------------------
+•••
+var Initializer = value;
+do {
+	execution
+} while (condition)
+•••
+	Example - 01
+	------------
+		var yourName = false;
+		do {
+			console.log("I am Ibnu Mahtab");
+		} while (yourName);
+
+	Example - 02
+	------------
+		var i = 1;
+		do {
+			console.log(i)
+		} while (i < 1)
+
+
+Lesson: 30 - Break and Continue
+-------------------------------
+• Break	
+
+	Example - 01
+	------------
+		for (var i = 1; i <= 10; i++){
+			console.log(i);
+		}
+
+	Example - 02
+	------------
+		for (var i = 1; i <= 10; i++){
+			console.log(i);
+			if (i == 5){
+			break;
+		}
+	}
+
+	→ Result:	1
+				2
+				3
+				4
+				5
+
+	Example - 03
+	------------
+		for (var i = 1; i <= 10; i++) {
+			if (i == 5) {
+				console.log(i);
+				break;
+			}
+		}
+
+	→ Result:	5
+
+	Example - 04
+	------------
+		for (var i = 1; i <= 10; i++) {
+			if (i == 5) {
+				break;
+			}
+			console.log(i);
+		}
+
+	→ Result:	1
+				2
+				3
+				4
+
+• Continue
+
+	Example - 01
+	------------
+		for (var i = 1; i <= 10; i++) {
+			if (i == 5) {
+				console.log(i);
+				continue;
+			}
+		}
+	→ Result: 5
+
+	Example - 02
+	------------
+		for (var i = 1; i <= 10; i++) {
+			if (i == 5) {
+				continue;
+			}
+			console.log(i);
+		}
+
+	→ Result:	1
+				2
+				3
+				4
+				5 - missing
+				6
+				7
+				8
+				9
+				10
+
+	Example - 03
+	------------
+		for (var i = 1; i <= 10; i++) {
+			console.log(i);
+			if (i == 5) {
+				continue;
+			}
+			console.log(i);
+		}
+	→ Result:	6
+				6
+				7
+				7
+				8
+				8
+				9
+				9
+				10
+				10
+
+
+Lesson: 31 - Array Traversing or Iteration
+------------------------------------------
+
+	Example - 01
+	------------
+		let something = "IbnuDesk";
+
+		for(var i = 0; i < something.length; i++){
+			console.log(something[i]);
+		}
+
+	Example - 02
+	------------
+	let position = ["Founder", "Co-Founder", "CEO"]
+
+	for (var i = 0; i < position.length; i++){
+		console.log(position[2]);
+	}
+
+
+Lesson: 32 - For in Loop and For of Loop
+----------------------------------------
+
+• For in Loop: It works with String, Array and Object.
+• For of Loop: It works with String and Array Only.
+
+• in - collect index number.
+• of - collect value access direct.
+
+	Example - 01
+	------------
+		let myPosition = "I am the CEO of IbnuDesk"
+
+		for(var myIndex in myPosition){
+			console.log(`Index Number ${myIndex} for ${myPosition[myIndex]}`);
+		}
+
+	Example - 02
+	------------
+		let myName = "I am the CEO";
+
+		for(var value of myName){
+			console.log(value);
+		}
+
+	Example - 03
+	------------
+		let ibnuDesk = ["Founder", "Co-Founder", "CEO"]
+
+		for(var myIndex in ibnuDesk){
+			console.log(`Index Number ${myIndex} for ${ibnuDesk[myIndex]}`);
+		}
+
+	Example - 04
+	------------
+		let ibnuDesk = ["Founder", "Co-Founder", "CEO"]
+
+		for(var myIndex of ibnuDesk){
+			console.log(`Our Company Position: ${myIndex}`);
+		}
+
+	Example - 05
+	------------
+		let ibnuDesk = {
+			Founder : "Robiul Islam",
+			CEO : "Ibnu Mahtab",
+			FinancialDirector : "Noor Hussain",
+		}
+
+		for(var weAre in ibnuDesk){
+			console.log(weAre)
+		}
+
+	Example - 06
+	------------
+		let ibnuDesk = {
+			Founder : "Robiul Islam",
+			CEO : "Ibnu Mahtab",
+			FinancialDirector : "Noor Hussain",
+		}
+
+		for(var weAre in ibnuDesk){
+			console.log(`Position: ${weAre} and  the Chairman: ${ibnuDesk[weAre]}`)
+		}
+
+
+Lesson: 33 - Function
+---------------------
+• There are two types of functions are available.
+	1. In built function.
+	2. User define function.
+
+• Structure to make functions!
+	function nameOfFunction () {
+		Your Logic!
+	}
+
+
+	Example - 06
+	------------
+		function javaScript () {
+			console.log("IbnuDesk");
+			console.log("Ibnu Mahtab");
+			console.log("CEO");
+		}
+		javaScript();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
